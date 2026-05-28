@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Advanced Motion|Transformations" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>G47 Command (Enable Cylindrical Coordinate Transformation)</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/When_Statement.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Warning.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Basic.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">Advanced Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Transformation_Overview.htm">Transformations</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">G47 Command (Enable Cylindrical Coordinate Transformation)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor188"></a>G47 Command (Enable Cylindrical Coordinate Transformation)</h1>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Syntax.css');width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre rowspan="1" bgcolor="#C0C0C0">G47 <span class="commandArgument">&lt;RotaryAxis&gt;</span> F <span class="commandArgument">&lt;radius&gt;</span></pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre bgcolor="#E0E0E0">G47 C F.05     ; Enable cylindrical coordinate transformation
+               ; rotary axis is the C axis, the radius of the
+               ; part is .05 units</pre>
+                </td>
+            </tr>
+        </table>
+        <p>The G47 command enables a transformation from the X/Y Cartesian plane into a cylindrical (C, Y) coordinate system. G47 command requires the use of the <a href="G52_Command_(Define_Polar_Cylindrical_Transformation_Axes).htm">G52</a> command to define the axes.</p>
+        <p>The cylindrical coordinate system has a rotational axis that holds the part to be machined, (the C axis in the following figure) and a linear axis (the X axis in the following figure) that moves parallel to the center of rotation of the rotational axis.</p>
+        <p>After you enable the G47 command, the controller automatically translates <a href="LINEAR_(G1)_Command.htm">G1 </a>commands, <a href="CW_(G2)_Command.htm">G2</a> commands, and <a href="CCW_(G3)_Command.htm">G3</a> commands for use in the cylindrical coordinate system as if a Cartesian coordinate system (X, Y) is present. These commands act on the axial axis (X axis in the following figure) and a virtual axis that moves along the surface of the cylinder (Y axis in the following figure).</p>
+        <table style="width: 650px;mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" class="TableStyle_Note" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> An additional axis that is perpendicular to the center line of rotation of the rotational axis can be present if you want to position a tool or the part to be machined. However, this axis is not dependent on, and not controlled by, the coordinate transformation.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="MCDropDown"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_1044116149_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: X, Y Rotational and Optional Additional Axes
+			</a>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_1044116149_0" style="display: none;">
+                <p class="img">
+                    <img src="../Resources/Images/Figure_XY_RotationalAndOptionalInfeedAxes_308x295.png" style="width: 308;height: 295;" border="0" class="img_1" />
+                </p>
+            </div>
+        </div>
+        <p>Once you have enabled the G47 command, all subsequent Y axis position commands refer to a distance along the circumference of the part. The controller calculates the correct distance to move the real C axis in order to generate the correct movement along the virtual Y axis.   Use the following equation to determine the quantity that the C axis moves for a given commanded movement on the Y axis.</p>
+        <p class="equation_18pt">
+            <img src="../GeneratedImages/Equations/Equation13.png" style="width: 421px;height: 46px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/When_Statement.css');" class="TableStyle-When_Statement" cellspacing="0">
+            <col class="Column-Column1" />
+            <col />
+            <tbody>
+                <tr class="Body-Body2">
+                    <td class="BodyB-Column1-Body2">
+                        <p>where</p>
+                    </td>
+                    <td class="BodyA--Body2">
+                        <p><span class="equationVariable">Current radius</span> is the radius specified in the G47 command.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The following table shows an overview of the three axes in the cylindrical coordinate system.</p>
+        <p class="Table_Title_bold_Numbered" MadCap:autonum="Table: &#160;&#160;&#160;&#160;"><span class="autonumber"><span>Table: &#160;&#160;&#160;&#160;</span></span>G47 Command Axis Configuration</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Basic.css');" cellspacing="0" class="TableStyle-Basic">
+            <col style="width: 133px;" class="TableStyle-Basic-Column-Column1" />
+            <col style="width: 134px;" class="TableStyle-Basic-Column-Column1" />
+            <col style="width: 200px;" class="TableStyle-Basic-Column-Column1" />
+            <col style="width: 150px;" class="TableStyle-Basic-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Basic-Head-Header1">
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="padding-left: 5px;padding-right: 5px;padding-top: 2px;padding-bottom: 2px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;text-align: center;">Axis Function</th>
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="padding-left: 5px;padding-right: 5px;padding-top: 2px;padding-bottom: 2px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;text-align: center;">Configured As</th>
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="padding-left: 5px;padding-right: 5px;padding-top: 2px;padding-bottom: 2px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;text-align: center;">Assigned With</th>
+                    <th class="TableStyle-Basic-HeadD-Column1-Header1" style="text-align: center;">Name in Diagram</th>
+                </tr>
+            </thead>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>Axial</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>Dominant axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>1st axis in G52 command</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;">
+                    <p class="center">X</p>
+                </td>
+            </tr>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>Circumferential</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>Dominant Virtual</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>2nd axis in G52 command</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;">
+                    <p class="center">Y</p>
+                </td>
+            </tr>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>Rotational</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>Dependent axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="text-align: center;">
+                    <p>1st axis in G47 command</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;">
+                    <p class="center">C</p>
+                </td>
+            </tr>
+        </table>
+        <p>The G45 command disables the cylindrical transformation. You must always issue the G45 command before you enable the G47 command mode.</p>
+        <p>You cannot use polar coordinate transformations (<a href="G46_Command_(Enable_Polar_Coordinate_Transformation).htm">G46</a> command) in the G47 command mode. You cannot generate asynchronous motion or jog the axes while this mode is active.</p>
+        <p>Verify the state of the cylindrical transformation mode. You can do this by using the <a href="ms-its:a3200.chm::/Commands/TASKSTATUS_Function.html" MadCap:wasOriginalLinkAbs_href="true">TASKSTATUS</a> Status Function to view the RthetaCylindricalActive bit 2 of <a href="ms-its:a3200.chm::/StructsAutoGen/taskstatus2.html" MadCap:wasOriginalLinkAbs_href="true">TaskStatus2</a>, or by looking for the G47 command in the <span class="procedureTerm">Modal Status</span> tab of <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span>.</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Warning.css');" cellspacing="0" class="TableStyle-Warning">
+            <col style="width: 50px;" class="TableStyle-Warning-Column-Column1" />
+            <col style="width: 589px;" class="TableStyle-Warning-Column-Column2" />
+            <tr class="TableStyle-Warning-Body-Body1">
+                <td style="width: 3.563%;" width="3.563%" class="TableStyle-Warning-BodyE-Column1-Body1">
+                    <img src="../Resources/Images/Common/Symbol_Warning.png" />
+                </td>
+                <td valign="middle" class="TableStyle-Warning-BodyD-Column2-Body1">
+                    <p><span class="warning">Warning:</span> Only G1 commands, G2 commands, G3 commands, and cutter compensation generated motion are valid under this mode of operation. Do not use <a href="RAPID_(G0)_Command.htm">G0</a> commands or any other type of axis motion when the cylindrical coordinate transformation is active.</p>
+                </td>
+            </tr>
+        </table>
+        <p>The example programs that follow show the commands that are required to enable and disable cylindrical coordinate transformation. The axis designations are consistent with <span class="procedureTerm">Figure: X,Y Rotational and Optional Infeed Axes</span>.</p>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+ENABLE X Y C
+HOME X Y C
+' Disable cylindrical coordinates before enabling.
+G45
+' Specify X as the axial axis and Y as the circumferential axis.
+G52 X Y
+
+' Enable cylindrical coordinates. The cylinder radius = 3.0.
+G47 C F3.0
+
+' Generate axis motion on the surface of the cylinder. Axis X runs along the axis of the cylinder.
+' Axis Y runs around the circumference of the cylinder.
+' This move makes the C axis go to 38.197 degrees.
+G9 G1 X2.0 Y2.0
+' ...              
+' G1, G2, and G3 motion commands.
+' ...
+' ...
+' Disable cylindrical coordinates.
+G45
+M2</pre>
+        </div>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+'
+' This example cuts 90 degrees of thread. It ascends clockwise on the X axis looking up the X axis, on a 3 inch radius cylinder. It has a pitch of 0.1 inch.
+' 
+ENABLE X Y C
+HOME X Y C
+' Disable G47 mode before enabling it.
+G45
+' The cylinder radius = R = 3.0 inch.
+G52 X Y
+G47 C F3
+G91
+' 4.712389 inch = 2PI*R*90° / 360°.
+G1 Y4.712389 X0.1
+' Disable G47 mode.
+G45</pre>
+        </div>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/CommandsOLD/Asynchronous_Motion.htm" MadCap:wasOriginalLinkAbs_href="true">Asynchronous Motion</a>
+        </p>
+        <p class="relatedTopic"><a href="G45_Command_(Disable_Polar_or_Cylindrical_Coordinate_Transformation).htm">G45 Command&#160;(Disable Polar or Cylindrical Coordinate Transformation)</a>
+        </p>
+        <p class="relatedTopic"><a href="G52_Command_(Define_Polar_Cylindrical_Transformation_Axes).htm">G52 
+ Command (Define Polar/Cylindrical Transformation Axes)</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:cncoption.chm::/Order_of_Transformation_Application.htm" MadCap:wasOriginalLinkAbs_href="true">Order of Transformation Application</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Programming_Units_and_Modes.htm" MadCap:wasOriginalLinkAbs_href="true">Programming Units and Modes</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Virtual_Axes.htm" MadCap:wasOriginalLinkAbs_href="true">Virtual Axis</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G47_Command_(Enable_Cylindrical_Coordinate_Transformation).htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G47_Command_(Enable_Cylindrical_Coordinate_Transformation).htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Advanced Motion|Transformations" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>G46 Command (Enable Polar Coordinate Transformation)</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/When_Statement.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Warning.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Basic.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">Advanced Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Transformation_Overview.htm">Transformations</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">G46 Command (Enable Polar Coordinate Transformation)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor186"></a>G46 Command (Enable Polar Coordinate Transformation)</h1>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Syntax.css');width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre rowspan="1" bgcolor="#C0C0C0">G46 <span class="commandArgument">&lt;LinearAxis&gt; </span><span class="commandArgument">&lt;RotaryAxis&gt;</span></pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre bgcolor="#E0E0E0">G46 U C    ; Define U axis as the radial axis and the 
+           ; C axis as the angular axis</pre>
+                </td>
+            </tr>
+        </table>
+        <p>The G46 command enables a transformation from an X/Y Cartesian axis plane to a polar coordinate system. <a href="G45_Command_(Disable_Polar_or_Cylindrical_Coordinate_Transformation).htm">G45</a> command disables the polar coordinate transformation. The G46 command requires the use of the <a href="G52_Command_(Define_Polar_Cylindrical_Transformation_Axes).htm">G52</a> command to define the axes.</p>
+        <p>The polar coordinate system has a linear positioning device that holds the tool and a rotational device that holds the part centered around its axis of rotation. Use the <a href="LINEAR_(G1)_Command.htm">G1 </a>command, <a href="CW_(G2)_Command.htm">G2</a> command, and <a href="CCW_(G3)_Command.htm">G3</a> command to program the part in Cartesian coordinates acting on virtual X (horizontal) and virtual Y (vertical) axes, as specified in the G52 command. The controller translates these virtual coordinates to polar coordinates (radius, theta, or angle), which are then used as position commands for two real axes, specified by the G46 command. The controller translates linear and circular motion (for G1 command, G2 command, and G3 command respectively) in the Cartesian space to the correct commands for the rotational (C) and linear (U) axes.</p>
+        <p>The <span class="commandArgument">&lt;LinearAxis&gt;</span> in the G46 command is the radial axis. The <i>&lt;RotaryAxis&gt;</i> is the angular or rotational axes. The first axis that is specified in the G52 command is the horizontal axis and the second axis is the vertical axes. Refer to <a href="#Figure:_Results_of_a_G52_X_Y_and_G46_U_C_commands" target="" title="" alt="" class="MCXref_0 selected">Figure: Results of a G52 X Y and G46 U C commands
+			</a> for more information.</p>
+        <p>There are four axes involved in the polar coordinate transformation. As shown  in the following table, you can assign an axis to any of the four functions, but the axis that you assign must be a dominant axis for X, Y, and U, and a dependent axis for C. Command motion by using the horizontal and vertical axes (which must be configured as virtual), but the actual motion is generated by the radial and angular axes.</p>
+        <p class="Table_Title_bold_Numbered" MadCap:autonum="Table: &#160;&#160;&#160;&#160;"><span class="autonumber"><span>Table: &#160;&#160;&#160;&#160;</span></span>G46 Command Axis Configuration</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Basic.css');width: 650px;" cellspacing="0" class="TableStyle-Basic">
+            <col style="width: 25%;" class="TableStyle-Basic-Column-Column1" />
+            <col style="width: 25%;" class="TableStyle-Basic-Column-Column1" />
+            <col style="width: 196px;" class="TableStyle-Basic-Column-Column1" />
+            <col style="width: 25%;" class="TableStyle-Basic-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Basic-Head-Header1">
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="text-align: left;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>Function</p>
+                    </th>
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="text-align: left;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>Configured As</p>
+                    </th>
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="text-align: left;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>Assigned With</p>
+                    </th>
+                    <th class="TableStyle-Basic-HeadD-Column1-Header1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>Name in Diagram</p>
+                    </th>
+                </tr>
+            </thead>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Horizontal axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Dominant Virtual axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>1st letter in G52 command</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p class="center">X</p>
+                </td>
+            </tr>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Vertical axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Dominant Virtual axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>2nd letter in G52 command</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p class="center">Y</p>
+                </td>
+            </tr>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Radial axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Dominant axis</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>1st letter in G46 command</p>
+                </td>
+                <td valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p class="center">U</p>
+                </td>
+            </tr>
+            <tr valign="top" class="TableStyle-Basic-Body-Body1">
+                <td colspan="1" rowspan="1" valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Angular axis</p>
+                </td>
+                <td colspan="1" rowspan="1" valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>Dependent axis</p>
+                </td>
+                <td colspan="1" rowspan="1" valign="middle" class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p>2nd letter in G46 command</p>
+                </td>
+                <td colspan="1" rowspan="1" valign="middle" class="TableStyle-Basic-BodyD-Column1-Body1" style="text-align: center;vertical-align: middle;padding-left: 5px;padding-right: 5px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                    <p class="center">C</p>
+                </td>
+            </tr>
+        </table>
+        <p>You cannot generate asynchronous motion or jog the axes while this mode is active.</p>
+        <table cellspacing="0" class="TableStyle-Warning" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Warning.css');width: 650px;">
+            <col style="width: 50px;" class="TableStyle-Warning-Column-Column1" />
+            <col class="TableStyle-Warning-Column-Column2" />
+            <tr class="TableStyle-Warning-Body-Body1">
+                <td class="TableStyle-Warning-BodyE-Column1-Body1">
+                    <p class="img">
+                        <img src="../Resources/Images/Common/Symbol_Warning.png" />
+                    </p>
+                </td>
+                <td valign="middle" class="TableStyle-Warning-BodyD-Column2-Body1">
+                    <p><span class="warning">WARNING:</span> Because the G46 command is still active at the end of a program, issue a G45 command at the beginning and end of your programs.</p>
+                </td>
+            </tr>
+        </table>
+        <p>When the G46 command executes, the positions of the X,Y,U, and C axes are critical to the correct operation of the polar coordinate transformation. For example, use X0, Y0, C0, U0 as the coordinates of the four axes at the time that the G46 command executes. The center of rotation of the C axis must always be at X0, Y0. Therefore, you must make sure that the X0 and Y0 coordinates are correct for the mechanics (<span class="equation">R = SQRT( X0 * X0 + Y0 * Y0)</span>, where R is the physical distance between the center of the C axis and the tool tip). You cannot use the <a href="G92_Command_(Set_Preset_Positions).htm">G92</a> command or fixture offsets to position the X and Y axes because polar coordinates are applied after offsets. You must move (with jog, <a href="RAPID_(G0)_Command.htm">G0</a> commands, or G1 commands) the virtual X and virtual Y axes to the correct positions before you activate the G46 command.</p>
+        <p class="ExampleHeader">EXAMPLE</p>
+        <p>The U0 and C0 coordinates are treated as offsets that are applied after the transformation. The polar coordinate command {C, U} is calculated as the following equation.</p>
+        <p class="equation_18pt">
+            <img src="../GeneratedImages/Equations/Equation10.png" style="width: 477px;height: 28px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <p class="equation_18pt">
+            <img src="../GeneratedImages/Equations/Equation11.png" style="width: 320px;height: 35px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/When_Statement.css');" class="TableStyle-When_Statement" cellspacing="0">
+            <col class="Column-Column1" />
+            <col />
+            <tbody>
+                <tr class="Body-Body2">
+                    <td class="BodyB-Column1-Body2">
+                        <p>where</p>
+                    </td>
+                    <td class="BodyA--Body2">
+                        <p>{<span class="equationVariable">X</span>,<span class="equationVariable">Y</span>} is the current virtual axes position.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="equation_18pt">
+            <img src="../GeneratedImages/Equations/Equation12.png" style="width: 550px;height: 28px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <p>When you generate motion in this mode, the speed and acceleration are calculated in the Cartesian XY plane. Velocities and accelerations can exceed user supplied limits, especially for the C axis near its center of rotation. Feedrates of the U and Z axes are not clamped by their <a href="ms-its:a3200.chm::/Parameters/DefaultSpeed.html" MadCap:wasOriginalLinkAbs_href="true">DefaultSpeed</a> axis parameters. Instead, speed violations are detected at a lower level and reported as a velocity command trap (instead of a clamp, it is an error). Acceleration violations are trapped as current and position errors.</p>
+        <p>Verify the state of the polar transformation mode. You can do this by using the <a href="ms-its:a3200.chm::/Commands/TASKSTATUS_Function.html" MadCap:wasOriginalLinkAbs_href="true">TASKSTATUS</a> Status Function to view the RThetaPolarActive Bit 1 of <a href="ms-its:a3200.chm::/StructsAutoGen/taskstatus2.html" MadCap:wasOriginalLinkAbs_href="true">TaskStatus2</a>, or by looking for the G46 command in the <span class="procedureTerm">Modal Status</span> tab of <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span>.</p>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> You cannot use cylindrical coordinate transformations (<a href="G47_Command_(Enable_Cylindrical_Coordinate_Transformation).htm">G47</a> command) in the G46 command mode.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> You can use cutter compensation in the G46 command mode.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> The virtual Cartesian axes must be virtual and dominant type axes.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> The real angular polar axis must be a dependent type axis and the real radial polar axis must be a dominant type axis.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 650px;mc-table-style: url('../Resources/TableStyles/Warning.css');margin-left: 0;margin-right: auto;" class="TableStyle-Warning" cellspacing="0">
+            <col style="width: 50px;" class="TableStyle-Warning-Column-Column1" />
+            <col class="TableStyle-Warning-Column-Column2" />
+            <tbody>
+                <tr class="TableStyle-Warning-Body-Body1">
+                    <td class="TableStyle-Warning-BodyB-Column1-Body1">
+                        <p class="img">
+                            <img src="../Resources/Images/Common/Symbol_Warning.png" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Warning-BodyA-Column2-Body1">
+                        <p><span class="warning">Warning:</span> Do not try to command motion through the origin&#160;(Cartesian axes = {0, 0}) because it causes a discontinuous step in the angular coordinate position command. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The figure that follows shows the geometry following the execution of a G52 X Y command and a G46 U C command.</p>
+        <div class="MCDropDown"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_3429032928_0" onclick="FMCDropDown( this ); return false;" name="Figure:_Results_of_a_G52_X_Y_and_G46_U_C_commands"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: Results of a G52 X Y and G46 U C commands
+			</a>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_3429032928_0" style="display: none;">
+                <p class="img">
+                    <img src="../Resources/Images/Figure_EnablePolarCoordTransformG46.png" style="height: 353px;width: 347px;" width="347" height="353" border="0" class="img_1" />
+                </p>
+            </div>
+        </div><a name="kanchor187"></a>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+' Draws a 2-inch square that has rounded corners in X-Z space, centered around X=0,Z=0. The controller moves the U and C axes as required. 
+' But there are U and C offsets of .2 inches and 5 degrees respectively, which are added to the U and C values.
+'
+ENABLE X Z U C
+' Disable before enabling.
+G45
+G70
+G90
+G108
+' Set feedrate.
+F100
+' Move to the home position of coordinate 0,0.
+G0 X0 Z0 U0 C0
+' Set real axes offsets (.2 inches, 5 degrees).
+G9 G1 U.2 C5
+
+' Coordinate system configuration. 
+' Specify IJK for circles (I=X, J=Y, K=Z).
+G16 X Y Z
+' Use the IK plane for circles.
+G18
+' X, Z are virtual axes (horizontal/vertical).
+G52 X Z
+' U is a RADIAL axis. C is an ANGULAR axis.
+G46 U C
+
+' Part.
+G9 G1 X2.0 Z0.0
+G91
+G1 Z1.0
+G2 X-1.0 Z1.0 I-1.0 K0
+G1 X-2.0
+G2 X-1.0 Z-1.0 I0 K-1.0
+G1 Z-2.0
+G2 X1.0 Z-1.0 I1.0 K0
+G1 X2.0
+G2 X1.0 Z1.0 I0 K1.0
+' Move back to the starting point.
+G9 G1 Z1.0
+
+' Move off of the part.
+G9 G1 X1.0
+' Disable polar coordinate transform.
+G45
+M2</pre>
+        </div>
+        <p>The example program that follows shows a 4 inch/mm square part with rounded corners (1.0 inch/mm radius) centered at the X/Y origin. Contact with the part occurs at X=2.0, Y=0.0. The rotary axis in the polar coordinate system is C and the linear axis is U.</p>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+' Disable before enabling.
+G45
+' Ends at U0° C2.
+G90 G1 X2 Y0 U0 C2
+G52 X Y
+G46 U C
+' Ends at U90° C1.
+G90 G1 X0 Y1
+' Disable G46 mode.
+G45</pre>
+        </div>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics
+        </h3>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Parameters/AxisType.html" MadCap:wasOriginalLinkAbs_href="true">Axis Type Parameter</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/CommandsOLD/Asynchronous_Motion.htm" MadCap:wasOriginalLinkAbs_href="true">Asynchronous Motion</a>
+        </p>
+        <p class="relatedTopic"><a href="../Cutter_Radius_Compensation_Overview.htm">Cutter Radius Compensation Overview</a>
+        </p>
+        <p class="relatedTopic"><a href="G45_Command_(Disable_Polar_or_Cylindrical_Coordinate_Transformation).htm">G45 Command&#160;(Disable Polar or Cylindrical Coordinate Transformation)</a>
+        </p>
+        <p class="relatedTopic"><a href="G47_Command_(Enable_Cylindrical_Coordinate_Transformation).htm">G47 Command (Cylindrical Coordinate Transformation)</a>
+        </p>
+        <p class="relatedTopic"><a href="G52_Command_(Define_Polar_Cylindrical_Transformation_Axes).htm">G52 
+ Command (Define Polar/Cylindrical Transformation Axes)</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:cncoption.chm::/Order_of_Transformation_Application.htm" MadCap:wasOriginalLinkAbs_href="true">Order of Transformation Application</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Virtual_Axes.htm" MadCap:wasOriginalLinkAbs_href="true">Virtual Axis</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G46_Command_(Enable_Polar_Coordinate_Transformation).htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G46_Command_(Enable_Polar_Coordinate_Transformation).htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

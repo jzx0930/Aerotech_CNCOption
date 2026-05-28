@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Velocity Profiling" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>G8 Command (Instantaneous Acceleration)</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="VELOCITY_ON_(G108)_Command.htm">Velocity Profiling</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">G8 Command (Instantaneous Acceleration)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor97"></a>G8 Command (Instantaneous Acceleration)</h1>
+        <table style="mc-table-style: url('../Resources/TableStyles/Syntax.css');mc-table-style-original: url('../Resources/TableStyles/Syntax.css');margin-left: 0;margin-right: auto;width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 6px;padding-right: 6px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #808080;">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre rowspan="1" bgcolor="#C0C0C0">G8</pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre bgcolor="#E0E0E0">G1 X5 F50        ; Velocity of F50
+G8 G1 X5 F500    ; Instantaneously jump from F50 to F500</pre>
+                </td>
+            </tr>
+        </table>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');mc-table-style-original: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;caption-side: top;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span>&#160;<span class="AerotechVariablesCompanyName_Short">Aerotech</span> does not recommend using this command. It is supplied only for backward compatibility. To use instantaneous ramping, issue the <a href="ms-its:a3200.chm::/Commands/RAMP RATE_Command.html" MadCap:conditions="AerotechConditions.Option_CNC" MadCap:wasOriginalLinkAbs_href="true">RAMP RATE</a> command with a value of 0.0.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Use the G8 command to instantaneously jump from an old to a new program velocity. It disables automatic acceleration and causes the motion to instantaneously accelerate or decelerate to the new programmed feedrate at the beginning of a coordinated move (G8 applies only to <a href="LINEAR_(G1)_Command.htm">G1</a>, <a href="CW_(G2)_Command.htm">G2</a>, and <a href="CCW_(G3)_Command.htm">G3</a> moves). Use this command with the <a href="ms-its:a3200.chm::/Parameters/TrajectoryIIRFilter.html" MadCap:wasOriginalLinkAbs_href="true">TrajectoryIIRFilter</a> parameter.</p>
+        <p>The figure (Velocity Profile with G8) displays a velocity profile with the G8 command. Without this command, acceleration is performed based on the settings of the acceleration mode. G8 applies only to coordinated motion, not <a href="RAPID_(G0)_Command.htm">G0</a> or <a href="ms-its:a3200.chm::/CommandsOLD/Asynchronous_Motion.htm" MadCap:wasOriginalLinkAbs_href="true">asynchronous motion</a>. A G8 must be on every line if instantaneous acceleration or deceleration is required on each line.</p>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');mc-table-style-original: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;caption-side: top;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> G8 overrides G108/G109 for the current program line.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+' Enable incremental programming mode.
+G91
+' Set the time base to seconds.
+G76
+' Move the X axis 1 unit at 100 units/s.
+G8 G1 X1 F100
+' Move the X axis 1 unit at 200 units/s.
+G8 G1 X1 F200
+' Move the X axis 1 unit at 100 units/s.
+G8 G1 X1 F100</pre>
+        </div>
+        <div class="MCDropDown"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_2204945132_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: Example of a Velocity Profile with G8 Example
+            </a>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_2204945132_0" style="display: none;">
+                <p class="img">
+                    <img src="../Resources/Images/Figure_VelocityProfile_INSTANTACCEL_G8_538x328.png" style="width: 538;height: 328;" border="0" class="img_1" />
+                </p>
+            </div>
+        </div>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');mc-table-style-original: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;caption-side: top;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> If motion is executing in the G8 mode and is placed into feedhold, the deceleration to zero is instantaneous. This also applies to <a href="ms-its:a3200.chm::/Commands/MFO_Command.html" MadCap:wasOriginalLinkAbs_href="true">MFO</a> adjustments and the <span class="procedureTerm">Abort</span> button  during a G8 mode move.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 650px;mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" class="TableStyle_Note" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> The acceleration cannot occur in a period that is less 
+ than the value specified by the <a href="ms-its:a3200.chm::/Parameters/MotionUpdateRate.html" MadCap:conditions="AerotechConditions.Option_CNC" MadCap:wasOriginalLinkAbs_href="true">MotionUpdateRate</a> parameter.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="G9_Command_(Forced_Deceleration).htm">G9 Command</a>
+        </p>
+        <p class="relatedTopic"><a href="VELOCITY_ON_(G108)_Command.htm">VELOCITY ON Command</a>
+        </p>
+        <p class="relatedTopic"><a href="VELOCITY_OFF_(G109)_Command.htm">VELOCITY OFF Command</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G8_Command_(Instantaneous_Acceleration).htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G8_Command_(Instantaneous_Acceleration).htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

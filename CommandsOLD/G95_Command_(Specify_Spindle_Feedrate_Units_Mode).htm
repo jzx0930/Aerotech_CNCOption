@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Controlling Axis Speeds|Spindle Modes" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>G95 Command</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/When_Statement.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G93_Command_(Specify_Feedrate_Mode).htm">Controlling Axis Speeds</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink selected" href="#">Spindle Modes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">G95 Command (Specify Spindle Feedrate Units Mode)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor44"></a>G95 Command</h1>
+        <table style="mc-table-style: url('../Resources/TableStyles/Syntax.css');margin-left: 0;margin-right: auto;caption-side: top;width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre rowspan="1" bgcolor="#C0C0C0">G<span class="italic">x</span>95</pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td class="TableStyle-Syntax-BodyE-Column1-Body1" rowspan="4">Example:</td>
+                <td class="TableStyle-Syntax-BodyD-Column2-Body1" style="color: #000000;font-weight: normal;font-style: normal;background-color: #c9c9c9;"><pre xml:space="preserve">G95     ; Feedrate in [distance units/Spindle 0 revolutions].</pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td class="TableStyle-Syntax-BodyD-Column2-Body1" style="color: #000000;font-weight: normal;font-style: normal;background-color: #c9c9c9;"><pre xml:space="preserve">G295    ; Feedrate in [distance units/Spindle 1 revolutions].</pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td class="TableStyle-Syntax-BodyD-Column2-Body1" style="color: #000000;font-weight: normal;font-style: normal;background-color: #c9c9c9;"><pre xml:space="preserve">G395    ; Feedrate in [distance units/Spindle 2 revolutions].</pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td class="TableStyle-Syntax-BodyD-Column2-Body1" style="color: #000000;font-weight: normal;font-style: normal;background-color: #c9c9c9;"><pre>G495    ; Feedrate in [distance units/Spindle 3 revolutions].</pre>
+                </td>
+            </tr>
+        </table>
+        <p>The G95 command causes feedrates that are specified by the F or E commands to be interpreted in units per spindle revolution. This causes the axes to move at a speed proportional to the absolute value of the programmed spindle speed (S command). Variations in the spindle's actual speed are not tracked and do not have an effect on the speed of the coordinated motion.</p>
+        <p>In this mode, units that are specified by the F and E commands apply.</p>
+        <p>Bit #17 of the TaskMode status item indicates if Gx95 mode is currently active.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" class="TableStyle_Note" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">NOTE:</span> When you use G93 or G95 mode, the <a href="ms-its:a3200.chm::\Parameters\DependentSpeedScaleFactor.html" MadCap:wasOriginalLinkAbs_href="false">DependentSpeedScaleFactor Parameter</a> does not scale the feedrate that you specify for the <a href="ms-its:a3200.chm::\CommandsOLD\F_E_and_S_Codes.htm" MadCap:wasOriginalLinkAbs_href="false">E Command</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> This mode does not have an effect on the feedrate of G0 moves.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+' Feedrates are linked to Spindle 0.
+G95
+' Set the user units to primary units.
+PRIMARY
+' Move the X axis 50 mm for each revolution of Spindle 0.
+G1 X100 F50</pre>
+        </div>
+        <p>The feedrate used during coordinated motion is given by the following equations and formula. The actual feedrate may be lower because of feedrate limiting or automatic acceleration. Refer to <a href="ms-its:a3200.chm::/Acceleration_Deceleration_Ramping_Overview.htm" MadCap:wasOriginalLinkAbs_href="true">Acceleration and Deceleration Ramping Overview</a>. </p>
+        <p class="equation">
+            <img src="../GeneratedImages/Equations/Equation2.png" style="width: 200px;height: 44px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/When_Statement.css');" class="TableStyle-When_Statement" cellspacing="0">
+            <col class="Column-Column1" />
+            <col />
+            <tbody>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>where</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span class="equationVariable">X</span> is the move distance for the X (linear) axis.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span class="equationVariable">Y</span> is the move distance for the Y (linear) axis.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyB-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyA--Body2">
+                        <p><span class="equationVariable">n</span> is the number of spindle revolutions needed to complete the move.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>When you generate circular motion on two axes, the sum of the squares for those axes is replaced by the product of the arc radius and the arc angle squared. For example, if circular interpolation is being executed on the X and Y axes, the feedrate is set with the following equation.</p>
+        <p class="equation">
+            <img src="../GeneratedImages/Equations/Equation3.png" style="width: 239px;height: 53px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/When_Statement.css');" class="TableStyle-When_Statement" cellspacing="0">
+            <col class="Column-Column1" />
+            <col />
+            <tbody>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>where</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span class="equationVariable">R</span> is the arc radius.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span style="font-family: Symbol;">Q</span> is the arc angle&#160;(in radians).</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span class="equationVariable">Z</span> is the move distance for the Z axis.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span class="equationVariable">a</span> is the move distance for the a axis.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyB-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyA--Body2">
+                        <p><span class="equationVariable">n</span> is the number of spindle revolutions needed to complete the move.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The actual feedrate in user units is set with the following formula.</p>
+        <p class="equation">
+            <img src="../GeneratedImages/Equations/Equation4.png" style="width: 419px;height: 28px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics
+        </h3>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Programming_Units_and_Modes.htm" MadCap:wasOriginalLinkAbs_href="true">Programming Units and Modes</a>
+        </p>
+        <p class="relatedTopic"><a href="G93_Command_(Specify_Feedrate_Mode).htm" class="MCXref_0">G93 Command (Specify Feedrate Mode)</a>
+        </p>
+        <p class="relatedTopic"><a href="G94_Command_(Specify_Feedrate_Mode).htm" class="MCXref_0">G94 Command (Specify Feedrate Mode)</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Feedrate_Overview.htm" MadCap:wasOriginalLinkAbs_href="true">Feedrate Overview</a>
+        </p>
+        <p class="relatedTopic"><a href="../Spindle_Overview.htm">Spindle Overview</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G95_Command_(Specify_Spindle_Feedrate_Units_Mode).htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G95_Command_(Specify_Spindle_Feedrate_Units_Mode).htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

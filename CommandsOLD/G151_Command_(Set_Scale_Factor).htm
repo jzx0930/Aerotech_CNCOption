@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Advanced Motion|Scaling" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>G151 Command (Set Scale Factor)</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">Advanced Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink selected" href="#">Scaling</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">G151 Command (Set Scale Factor)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor168"></a>G151 Command (Set Scale Factor)</h1>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Syntax.css');width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre xml:space="preserve">G151 <span class="commandArgument">&lt;AxisPoint&gt;</span></pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre bgcolor="#E0E0E0" xml:space="preserve">G151 X2 Y2</pre>
+                </td>
+            </tr>
+        </table>
+        <p>Use the G151 Command (Set Scale Factor) to scale the size of a part. You can increase or decrease the size of a part by the values that you specify for the axes. These values become the scale factors. A scale factor that is greater than 1 increases the size of a part. A scale factor that is less than 1 decreases the size of a part. The G151 command scales only the programmed position targets of the CCW, CW, BEZIER, LINEAR, MOVEABS, MOVEINC, and RAPID motion commands.</p>
+        <p>The G151 command is modal and it is not necessary for you to specify it on each program line. If you do not specify the G151 command, the controller uses the previously specified value of this command to scale the part. The G151 command stays in effect until you issue the <a href="G150_Command_(Clear_Scale_Factor).htm" class="MCXref_0">G150 Command (Clear Scale Factor)</a>, which disables scaling. You can make sure that the active state of the G151 command is correct by using the <span class="bold">ScalingActive</span> bit of the <a href="ms-its:a3200.chm::/StructsAutoGen/taskstatus2.html" MadCap:wasOriginalLinkAbs_href="true">Task Status 2</a> status item.</p>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure: Scaling Effect
+            </h4>
+        <p class="img">
+            <img src="../Resources/Images/Figure_ScaleFactorCommand.png" style="height: 246px;width: 326px;" width="326" height="246" border="0" class="img_1" />
+        </p>
+        <p>When you issue the G151 command, the controller makes a scale center at the current position. Then it scales, by the specified scale factor, all absolute motion coordinates that you supply. The controller scales these coordinates around the scale center. Refer to the equation that follows.</p>
+        <p class="equation">
+            <img src="../GeneratedImages/Equations/Equation9.png" style="width: 910px;height: 22px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <div class="example">
+            <p class="For_example_Head">For Example</p>
+            <p>If you scale by 2 at the position of {1,1}, then a subsequent absolute move to {2,3} actually moves to {3,5}.</p>
+        </div>
+        <p>The G151 command does not scale all of the values that you supply. This command scales only the programmed position targets of the CCW, CW, BEZIER, LINEAR, MOVEABS, MOVEINC, and RAPID motion commands.</p>
+        <h4 MadCap:autonum=""><span class="autonumber"><span></span></span>G151 Command Does Not Scale:</h4>
+        <p class="indentLevel1"><span class="bold">Velocity targets</span> such as the <a href="ms-its:a3200.chm::/CommandsOLD/F_E_and_S_Codes.htm" MadCap:wasOriginalLinkAbs_href="true">F and E Commands</a> and <span class="commandArgument">&lt;Axis&gt;</span>F<span class="commandArgument">&lt;Speed&gt;</span>. For more information about&#160;<span class="commandArgument">&lt;Axis&gt;</span>F<span class="commandArgument">&lt;Speed&gt;</span>, refer to <a href="ms-its:a3200.chm::/Commands/RAPID_Command.html" MadCap:wasOriginalLinkAbs_href="true">RAPID&#160;Command</a>.</p>
+        <p class="indentLevel1"><span class="bold">Acceleration targets</span> such as <a href="ms-its:a3200.chm::/Commands/RAMP RATE_Command.html" MadCap:wasOriginalLinkAbs_href="true">RAMP&#160;RATE&#160;Command</a> arguments.</p>
+        <p class="indentLevel1"><span class="bold">Coordinates</span> that you supply for the <a href="G92_Command_(Set_Preset_Positions).htm" class="MCXref_0">G92 Command (Set an Arbitrary Program Offset)</a> or for fixture offsets. Make sure that you always supply coordinates in the coordinate system that is not scaled. For more information about fixture offsets, refer to <a href="../Fixture_Offsets_Overview.htm" class="MCXref_0">Fixture Offsets Overview</a>.</p>
+        <p class="indentLevel1"><span class="bold">Parameters</span> that you configure, such as the <a href="ms-its:a3200.chm::/Parameters/RolloverCounts.html" MadCap:wasOriginalLinkAbs_href="true">RolloverCounts Parameter</a> and <a href="ms-its:a3200.chm::/Parameters/SoftwareLimitHigh.html" MadCap:wasOriginalLinkAbs_href="true">SoftwareLimitHigh Parameter</a>.</p>
+        <p>To disable scaling, use the <a href="G150_Command_(Clear_Scale_Factor).htm" class="MCXref_0">G150 Command (Clear Scale Factor)</a>.</p>
+        <table style="margin-left: 0;margin-right: auto;width: 650px;mc-table-style: url('../Resources/TableStyles/Note.css');" class="TableStyle_Note" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">NOTE:</span> When you use the BEZIER, CCW, CW, and G151 commands, make sure that you supply the same scale factor for the axes in the G151 command. If you supply different scale factors, arcs stay circular and do not become elliptical. As a result, unexpected circular radius errors or geometries can occur.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin-left: 0;margin-right: auto;width: 650px;mc-table-style: url('../Resources/TableStyles/Note.css');" class="TableStyle_Note" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">NOTE:</span> You can use negative scale factors to mirror parts. But if you use the R Method to program coordinated arcs, you must change the arithmetic sign of the R value to get the correct mirror effect. For more information, refer to the <span class="bold">R Method</span> section of <a href="ms-its:a3200.chm::/Commands/CCW_Command.html" MadCap:wasOriginalLinkAbs_href="true">CCW Command</a> or <a href="ms-its:a3200.chm::/Commands/CW_Command.html" MadCap:wasOriginalLinkAbs_href="true">CW&#160;Command</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="G150_Command_(Clear_Scale_Factor).htm" class="MCXref_0">G150 Command (Clear Scale Factor)</a>
+        </p>
+        <p class="relatedTopic"><a href="G92_Command_(Set_Preset_Positions).htm" class="MCXref_0">G92 Command (Set an Arbitrary Program Offset)</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Commands/CW_Command.html" MadCap:wasOriginalLinkAbs_href="true">CW Command</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Motion_Overview.htm" MadCap:wasOriginalLinkAbs_href="true">Motion Overview</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Positions_Overview.htm" MadCap:wasOriginalLinkAbs_href="true">Positions Overview</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G151_Command_(Set_Scale_Factor).htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=G151_Command_(Set_Scale_Factor).htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

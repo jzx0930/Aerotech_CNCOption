@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Advanced Motion|Transformations" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>MIRROR ON Command</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">Advanced Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Transformation_Overview.htm">Transformations</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">MIRROR ON Command</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor192"></a>MIRROR ON Command</h1>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Syntax.css');width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre rowspan="1" bgcolor="#C0C0C0" xml:space="preserve">MIRROR ON <span class="commandArgument">&lt;axisMask&gt;</span></pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre bgcolor="#E0E0E0" xml:space="preserve">MIRROR ON X V Z    ; Activate mirroring of the X, V, and Z axes.</pre>
+                </td>
+            </tr>
+        </table>
+        <p>The MIRROR ON command activates the mirror image function for the axes specified in the command. Mirroring is disabled on any axis not specified in this mask when the command is executed. Mirroring is not cumulative.</p>
+        <p>Verify the state of the mirroring mode by viewing the MirrorActive bit of the <a href="ms-its:a4300.chm::/StructsAutoGen/taskstatus2.html" MadCap:wasOriginalLinkAbs_href="true">TaskStatus2</a> status item.</p>
+        <p>The MIRROR ON command operates in both the relative and absolute mode (<a href="ms-its:a3200.chm::/Commands/ABSOLUTE_Command.html" MadCap:wasOriginalLinkAbs_href="true">ABSOLUTE</a>/<a href="ms-its:a3200.chm::/Commands/INCREMENTAL_Command.html" MadCap:wasOriginalLinkAbs_href="true">INCREMENTAL</a>). In relative mode, the origin, or point in the plane at the moment mirroring takes place, is the active position in the plane. In absolute mode, the origin is the home position.</p>
+        <p>While in the absolute mode, you must be at the software home defined by the <a href="ms-its:a3200.chm::/Commands/POSOFFSET_Command.html" MadCap:wasOriginalLinkAbs_href="true">POSOFFSET</a> command when activating the mirror mode, or unexpected results occur.</p>
+        <p>Use the <a href="MIRROR_OFF_Command.htm">MIRROR OFF</a> command to deactivate the mirror image function.</p>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> When mirror mode is active, cutter radius compensation left becomes cutter radius compensation right, and conversely.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="MCDropDown"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_1435031621_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: Effects of the MIRROR ON Command
+            </a>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_1435031621_0" style="display: none;">
+                <p class="img">
+                    <img src="../Resources/Images/Figure_Mirroring_MIRROR_ON_1.png" style="height: 416px;width: 457px;" width="457" height="416" border="0" class="img_1" />
+                </p>
+                <p>&#160;</p>
+            </div>
+        </div>
+        <div class="MCDropDown"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_1435031621_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: Mirror Image Example
+            </a>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_1435031621_1" style="display: none;">
+                <p class="img">
+                    <img src="../Resources/Images/Figure_Mirroring_MIRROR_ON_2.png" style="height: 416px;width: 457px;" width="457" height="416" border="0" class="img_1" />
+                </p>
+            </div>
+        </div>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example: Mirror Image Example Program</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+' Enable incremental programming mode.
+INCREMENTAL
+' Move the X and Y axes to coordinate (0, 0) which is the home position.
+HOME X Y
+' Disable the mirror image function.
+MIRROR OFF
+' Call subroutine BOX1, which draws a box in the first quadrant of Figure: Mirror Image Example.
+CALL BOX1
+' Enable the mirror image function for the X and Y axes, which changes the positive X and Y values to negative values.
+MIRROR ON X Y
+' Call subroutine BOX1, which draws a box in the third quadrant of Figure: Mirror Image Example.
+CALL BOX1
+' Disable the mirror image function.
+MIRROR OFF
+' Stop the program.
+END PROGRAM
+
+' Define subroutine BOX1.
+DFS BOX1
+    ' Set the feedrate to 100.
+    F100.
+    ' Start a positive linear move for the X and Y axes.
+    LINEAR X2. Y4.
+    ' Start a positive linear move for the X axis.
+    X2.
+    ' Start a positive linear move for the Y axis.
+    Y2.
+    ' Start a negative linear move for the X axis.
+    X-2.
+    ' Start a negative linear move for the Y axis.
+    Y-2.
+    ' Start a linear move of the X and Y axes to the starting position.
+    X-2. Y-4. 
+' End of the subroutine.
+ENDDFS</pre>
+        </div>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="../Transformation_Overview.htm">Transformation Overview</a>
+        </p>
+        <p class="relatedTopic"><a href="../Order_of_Transformation_Application.htm" id="A1">Order of Transformations application</a>
+        </p>
+        <p class="relatedTopic"><a href="MIRROR_OFF_Command.htm">MIRROR OFF Command</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=MIRROR_ON_Command.htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=MIRROR_ON_Command.htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>
