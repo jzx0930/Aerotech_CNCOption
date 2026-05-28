@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Advanced Motion|Rotation Transformation Overview" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>ROTATION Transformation Overview</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">Advanced Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink selected" href="#">Rotation Transformation Overview</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Rotation Transformation Overview</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor161"></a>ROTATION Transformation Overview</h1>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr MadCap:conditions="">
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd"><span class="note">Note</span>: ROTATION Transformation is similar in nature to Parts Rotation (<a href="G84_Command_(Parts_Rotation).htm">G84</a>), but they are not interchangeable. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>ROTATION Transformation allows a program to specify axis positions in a programmed coordinate space, while the actual axis positions are transformed onto an actual coordinate space. The transformation consists of three linear Virtual Axes which are used for parts programming (InputAxis1, InputAxis2, and InputAxis3), and three linear physical axes that will have the resultant transform applied (OutputAxis1, OutputAxis2, and OutputAxis3). Additionally, a rotational axis can be used as an argument into the transformation. Up to six instances of this transformation can be active on a task at the same time. Each instance of the transformation completes the following operations.</p>
+        <ol>
+            <li value="1">A displacement along Axis1, Axis2, and Axis3.</li>
+            <li value="2">A rotation in the Axis1-Axis2 coordinate system (about Axis3).</li>
+        </ol>
+        <p>The transform is a space-fixed transform, in that each rotation is relative to the physical system. Thus, the output of ROTATION 1 is transformed by ROTATION 2, which is transformed by ROTATION 3, etc. The positions of the programmed input axes (InputAxis1, InputAxis2,and InputAxis3) remain unchanged by the transform. The positions of the output axes (OutputAxis1, OutputAxis2, and OutputAxis3) are based on the transform.</p>
+        <p>You can set the linear input axes (InputAxis1, InputAxis2, and InputAxis3) and the linear output axes (OutputAxis1, OutputAxis2, and OutputAxis3) by using the <a href="ROTATION_InputAxes_OutputAxes_Command.htm">ROTATION InputAxes/OutputAxes command</a>. Use the <a href="ROTATION_Displacement_Command.htm">ROTATION Displacement command</a> to apply an axis displacement before the rotation occurs. This allows for rotations about points other than the origin.</p>
+        <p>Use the <a href="ROTATION_Angle_Command.htm">ROTATION Angle command</a> to set the rotation angle to either numerical values (constant) or axis positions (variable). If you use numerical values (constant) in the ROTATION Angle command, specify the angle in degrees. If you use axis positions, the axis you specify should be programmed in degrees.</p>
+        <p>The <a href="ROTATION_Normalcy_Command.htm">ROTATION Normalcy command</a> can be used to indicate that the ROTATION Transformation should also transform a normalcy axis. Because normalcy operates in programmed space, you might need to use the ROTATION Normalcy command to generate a normalcy angle in post-transformed space.&#160;(Refer to <a href="../Normalcy_Motion_Overview.htm">Normalcy Motion Overview</a> for more information about normalcy.) </p>
+        <p>After you set all of the axes and arguments, use the ROTATION On command to enable the ROTATION Transformation. Conversely, use the ROTATION Off command to disable the ROTATION Transformation.&#160;(Refer to <a href="ROTATION_On_Off_Command.htm">ROTATION On/Off Command</a> for more information.) </p>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <p>The following program sets up a series of three rotations.  Using the right-hand rule convention, the first rotation is about z, the second rotation is about <span class="equation">x</span>, and the third rotation is about y.  The variables <span class="equation">&#1256;<sub>z</sub></span>, <span class="equation">&#1256;<sub>x</sub></span>, <span class="equation">&#1256;<sub>y</sub></span>, <span class="equation">x<sub>1</sub></span>, <span class="equation">y<sub>1</sub></span>,<span class="equation"> z<sub>1</sub></span>, <span class="equation">x<sub>2</sub></span>, <span class="equation">y<sub>2</sub></span>, <span class="equation">z<sub>2</sub></span>, <span class="equation">x<sub>3</sub></span>, <span class="equation">y<sub>3</sub></span>, <span class="equation">z<sub>3</sub></span> represent values that you would input into the transformation.  Axes <span class="equation">x</span>,<span class="equation"> y</span>, <span class="equation">z</span> are the input axes that are used to program the part, and axes <span class="equation">X</span>, <span class="equation">Y</span>, <span class="equation">Z</span> are the output axes that will perform the machine motion.</p><pre xml:space="preserve" class="indentLevel1">
+ROTATION 1 InputAxes <span style="font-size: 11pt;">x y z</span> OutputAxes <span style="font-size: 11pt;">X Y Z</span> 
+ROTATION 1 Angle <span style="font-size: 11pt;">&#1256;</span><sub style="font-size: 10pt;">z</sub> 
+ROTATION 1 Displacement <span style="font-size: 11pt;">x</span><sub style="font-size: 9pt;">1</sub><span style="font-size: 11pt;"> y</span><sub style="font-size: 9pt;">1</sub><span style="font-size: 11pt;"> z</span><sub style="font-size: 9pt;">1</sub> 
+ROTATION 2 InputAxes <span style="font-size: 11pt;">y z x</span> OutputAxes <span style="font-size: 11pt;">Y Z X</span> 
+ROTATION 2 Angle <span style="font-size: 11pt;">&#1256;</span><sub style="font-size: 10pt;">x</sub> 
+ROTATION 2 Displacement <span style="font-size: 11pt;">y</span><sub style="font-size: 9pt;">2</sub><span style="font-size: 11pt;"> z</span><sub style="font-size: 9pt;">2</sub><span style="font-size: 11pt;"> x</span><sub style="font-size: 9pt;">2</sub> 
+ROTATION 3 InputAxes <span style="font-size: 11pt;">z x y</span> OutputAxes <span style="font-size: 11pt;">Z X Y</span> 
+ROTATION 3 Angle <span style="font-size: 11pt;">&#1256;</span><sub style="font-size: 10pt;">y</sub> 
+ROTATION 3 Displacement <span style="font-size: 11pt;">z</span><sub style="font-size: 9pt;">3</sub><span style="font-size: 11pt;"> x</span><sub style="font-size: 9pt;">3</sub><span style="font-size: 11pt;"> y</span><sub style="font-size: 9pt;">3</sub> 
+ROTATION 1 On
+ROTATION 2 On
+ROTATION 3 On
+		</pre>
+        <p>This would result in the following matrix operations:</p>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure 1: Matrix Operations of Example</h4>
+        <table style="border-spacing: 0px 0px;border-collapse: collapse;margin-left: 0;margin-right: auto;caption-side: top;">
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 30px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 30px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 30px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 50px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <tbody>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">x</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">X</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;" colspan="3" rowspan="2"><span colspan="3" rowspan="2" class="equation">&#160;Rotation 3</span>
+                    </td>
+                    <td>&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;" colspan="3" rowspan="2"><span class="equation">Rotation 2</span>
+                    </td>
+                    <td>&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;" colspan="3" rowspan="2"><span class="equation">Rotation 1</span>
+                    </td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">y</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;" rowspan="2"><span style="font-size: 28pt;">=</span>
+                    </td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">Y</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">z</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">Z</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 11pt;">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation" style="font-size: 12pt;">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The mathematical representation of the Rotation 1, Rotation 2, and Rotation 3 matrices are shown below.  Note that each rotation operation consists of an <span class="equation">x</span>, <span class="equation">y</span>, <span class="equation">z</span> displacement (<span class="equation">x<sub style="font-size: 9pt;">i</sub> y<sub style="font-size: 9pt;">i</sub> z<sub style="font-size: 9pt;">i</sub></span>) followed by a rotation (<span class="equation">&#1256;</span>).</p>
+        <p>&#160;</p>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure 2: Rotation 1 Matrix (rotation about z)</h4>
+        <table style="border-spacing: 0px 0px;border-collapse: collapse;margin-left: 0;margin-right: auto;caption-side: top;">
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 30px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 50px;" />
+            <tbody>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;">
+                        <p><span class="equation">cos</span><span class="equation"> &#1256;<sub>z</sub></span>
+                        </p>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">-sin &#1256;<sub>z</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">x</span><sub>1</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">sin &#1256;<sub>z</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">cos &#1256;<sub>z</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;">
+                        <p><span class="equation">0</span>
+                        </p>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">y</span><sub>1</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">z</span><sub>1</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure 3: Rotation 2 Matrix (rotation about x)</h4>
+        <table style="border-spacing: 0px 0px;border-collapse: collapse;margin-left: 0;margin-right: auto;caption-side: top;">
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 30px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 50px;" />
+            <tbody>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;">
+                        <p><span class="equation">1</span>
+                        </p>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">x</span><sub>2</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">cos &#1256;<sub>x</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;">
+                        <p><span class="equation">-sin &#1256;<sub>x</sub></span>
+                        </p>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">y</span><sub>2</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">sin &#1256;<sub>x</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">cos</span><span class="equation"> &#1256;<sub>x</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">z</span><sub>2</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure 4: Rotation 3 Matrix (rotation about y)</h4>
+        <table style="border-spacing: 0px 0px;border-collapse: collapse;margin-left: 0;margin-right: auto;caption-side: top;">
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 30px;" />
+            <col style="width: 15px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 60px;" />
+            <col style="width: 15px;" />
+            <col style="width: 50px;" />
+            <tbody>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;">
+                        <p><span class="equation">cos</span><span class="equation"> &#1256;<sub>y</sub></span>
+                        </p>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">sin &#1256;<sub>y</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">x</span><sub>3</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;">
+                        <p><span class="equation">0</span>
+                        </p>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">y</span><sub>3</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">-sin &#1256;<sub>y</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">cos &#1256;<sub>y</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation"><span style="font-size: 11pt;">z</span><sub>3</sub></span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                    <td style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">0</span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;"><span class="equation">1</span>
+                    </td>
+                    <td style="border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 0px;padding-right: 0px;padding-top: 6px;padding-bottom: 6px;">&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="ROTATION_Angle_Command.htm">ROTATION Angle Command</a>
+        </p>
+        <p class="relatedTopic"><a href="ROTATION_Displacement_Command.htm">ROTATION Displacement Command</a>
+        </p>
+        <p class="relatedTopic"><a href="ROTATION_InputAxes_OutputAxes_Command.htm">ROTATION InputAxis/OutputAxis  Command</a>
+        </p>
+        <p class="relatedTopic"><a href="ROTATION_Normalcy_Command.htm">ROTATION Normalcy  Command</a>
+        </p>
+        <p class="relatedTopic"><a href="ROTATION_On_Off_Command.htm">ROTATION On/Off Command</a>
+        </p>
+        <p class="relatedTopic"><a href="TRANSFORM_POSITION_RESET_Command.htm">TRANSFORM POSITION RESET Command</a>
+        </p>
+        <p class="relatedTopic"><a href="../Transformation_Overview.htm">Transformation Overview</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=ROTATION_Transformation_Overview.htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=ROTATION_Transformation_Overview.htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

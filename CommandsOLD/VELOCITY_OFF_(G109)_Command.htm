@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Velocity Profiling" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>G109 Command (Disable Velocity Profiling and Lookahead)</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="VELOCITY_ON_(G108)_Command.htm">Velocity Profiling</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">G109 Command (Disable Velocity Profiling and Lookahead)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor95"></a>G109 Command (Disable Velocity Profiling and Lookahead)</h1>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Syntax.css');width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre>G109
+</pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre>G109     ; Disable constant velocity mode (the
+         ; blending of multiple moves together).</pre>
+                </td>
+            </tr>
+        </table>
+        <p>Use the G109 command to disable velocity profiling (<a href="VELOCITY_ON_(G108)_Command.htm">G108</a>) and cause the controller to decelerate to zero velocity between consecutive coordinated (<a href="LINEAR_(G1)_Command.htm">G1</a>, <a href="CW_(G2)_Command.htm">G2</a>, <a href="CCW_(G3)_Command.htm">G3</a>) moves. G109 applies only to coordinated motion.</p>
+        <p>The state of this modal command is indicated by Bit 5 of the <a href="ms-its:a3200.chm::/StructsAutoGen/taskmode.html" MadCap:wasOriginalLinkAbs_href="true">TaskMode</a> status item.</p>
+        <p>If you are in velocity profiling mode and you issue a G109 command, the controller will decelerate to zero velocity after the last coordinated move before the G109 command.</p>
+        <p>You can issue a G109 command on the same line as a coordinated motion command. If you do this while in velocity profiling mode, the controller will decelerate to zero velocity before executing the move, and will decelerate to zero between subsequent coordinated moves.</p>
+        <p>Without velocity profiling mode, the controller always decelerates to zero velocity between consecutive coordinated moves. The example program and figure that follow show the behavior of the controller when velocity profiling mode is not active.</p><a name="kanchor96"></a>
+        <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+        <div class="codeexample"><pre xml:space="preserve">
+' Enable forced deceleration mode.
+G109
+' Enable incremental programming mode.
+G91
+' Set the vector feedrate to 60.
+F60.
+' Move the X axis 1.0.
+G1 X1.
+' Move at a velocity of 120.
+F120.
+' Move the X axis 2.0.
+G1 X2.
+' Set the vector feedrate to 60.
+F60.
+' Move the X axis 1.0.
+G1 X1.
+' Dwell for one second.
+G4 P1
+' Move the X axis 1.0.
+G1 X1.</pre>
+        </div>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure: Example of a Velocity Profile with G109</h4>
+        <p class="img">
+            <img src="../Resources/Images/Figure_VelocityProfile_VELOCITYOFF_(wG9)_498x203.png" style="width: 498;height: 203;" border="0" class="img_1" />
+        </p>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd"><span class="note">Note</span>: Do not use the <a href="ms-its:a3200.chm::/Commands/SLICE_Command.html" MadCap:wasOriginalLinkAbs_href="true">SLICE</a> command while performing velocity profiling with a G108 - G109 block. Doing so will result in an error.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics
+        </h3>
+        <p class="relatedTopic"><a href="G8_Command_(Instantaneous_Acceleration).htm">G8 Command</a>
+        </p>
+        <p class="relatedTopic"><a href="G9_Command_(Forced_Deceleration).htm">G9 Command</a>
+        </p>
+        <p class="relatedTopic"><a href="VELOCITY_ON_(G108)_Command.htm">VELOCITY ON Command</a>
+        </p>
+        <p class="relatedTopic">&#160;</p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=VELOCITY_OFF_(G109)_Command.htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=VELOCITY_OFF_(G109)_Command.htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

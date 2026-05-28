@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Advanced Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>T Command</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Syntax.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Warning.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/Note.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('../Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="../CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Custom_Command_Introduction.htm">Advanced Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">T Command</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor221"></a>T Command</h1>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Syntax.css');width: 650px;" cellspacing="0" class="TableStyle-Syntax">
+            <col style="width: 85px;" class="TableStyle-Syntax-Column-Column1" />
+            <col class="TableStyle-Syntax-Column-Column2" />
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td colspan="1" rowspan="1" bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">Syntax:</td>
+                <td rowspan="1" bgcolor="#C0C0C0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre rowspan="1" bgcolor="#C0C0C0">T<span class="commandArgument">&lt;toolNumber&gt;</span></pre>
+                </td>
+            </tr>
+            <tr class="TableStyle-Syntax-Body-Body1">
+                <td bgcolor="#808080" class="TableStyle-Syntax-BodyE-Column1-Body1">
+                    <p class="SyntaxTableHeader">Example:</p>
+                </td>
+                <td bgcolor="#E0E0E0" class="TableStyle-Syntax-BodyD-Column2-Body1"><pre bgcolor="#E0E0E0" xml:space="preserve">T10
+T($global[0]+1)</pre>
+                </td>
+            </tr>
+        </table>
+        <p>This command loads a new tool. The specified tool must be contained in the Tool File. If the specified tool is not contained in the tool file,  the following runtime task error occurs: Invalid tool specified. Only one tool can be active for all tasks.</p>
+        <p>You can add tools to the Tool File or edit tools already in the file with <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span>. Refer to <a href="ms-its:cncoi.chm::/Configuring_Tools.htm" MadCap:wasOriginalLinkAbs_href="true">Configuring Tools</a> for more information.</p>
+        <p>Loading a tool consists of taking the data stored in the tool file for that tool and loading it into the correct tool parameters. Loading a tool does not have an effect until the program moves on to the part by executing the G-Codes: <a href="G143_Command_(Activate_Positive_Cutter).htm">G143</a>, <a href="G144_Command_(Activate_Negative_Cutter).htm">G144</a>, <a href="G41_Command_(Activate_ICRC_Left).htm">G41</a>, or <a href="G42_Command_(Activate_ICRC_Right).htm">G42</a>. G41, and G42 will activate the Cutter Radius and Cutter Wear portion of the tool, while G143, and G144 will activate the Cutter Offsets and Length portions of the tool. The Cutter Wear is subtracted from the Cutter Radius to obtain the true tool radius.</p>
+        <p>Before you load the tool, you must define the compensated axes with the <a href="G44_Command_(Set_Cutter_Compensation_Axes).htm">G44</a> command.</p>
+        <p>T commands can be executed on the same line as F, E, and S commands, and many other G-Codes. If the tool specifies a required speed, the F, E, or S command on that line or on a subsequent line overrides the specification, as defined by <a href="../G_Code_and_M_Code_Execution.htm">G-Code and M-Code Execution</a>.</p>
+        <p>Tools must be numbered with nonzero positive integers. Specifying a tool word with a number of 0 selects the null tool, which has zero cutter radius, tool length, and tool offsets.</p>
+        <table class="TableStyle_Note" style="mc-table-style: url('../Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;width: 650px;" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> You cannot specify a null tool to restore the feedrates that were previously specified by the F and S commands, and were active before the tool was loaded.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Warning.css');width: 650px;" cellspacing="0" class="TableStyle-Warning">
+            <col style="width: 50px;" class="TableStyle-Warning-Column-Column1" />
+            <col class="TableStyle-Warning-Column-Column2" />
+            <tr class="TableStyle-Warning-Body-Body1">
+                <td colspan="1" rowspan="1" class="TableStyle-Warning-BodyE-Column1-Body1">
+                    <img src="../Resources/Images/Common/Symbol_Warning.png" />
+                </td>
+                <td colspan="1" rowspan="1" valign="middle" class="TableStyle-Warning-BodyD-Column2-Body1">
+                    <p><span class="warning">Warning:</span> The Tool specification is not automatically removed after running the program. Make sure to put a T0 at the beginning and end of your program.</p>
+                </td>
+            </tr>
+        </table>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=T_Word.htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=T_Word.htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="../Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>
