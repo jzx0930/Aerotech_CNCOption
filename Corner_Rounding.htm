@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|G-Code and M-Code Programming|Motion|Advanced Motion|Corner Rounding and Normalcy" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>Corner Rounding Overview</title>
+        <link href="SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/When_Statement.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Basic.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Note.css" rel="stylesheet" />
+        <script src="SkinSupport/jquery.js">
+        </script>
+        <script src="SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="G_M_Code_Programming_Overview.htm">G-Code and M-Code Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="CommandsOLD/RAPID_(G0)_Command.htm">Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="CommandsOLD/G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">Advanced Motion</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink selected" href="#">Corner Rounding and Normalcy</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Corner Rounding Overview</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span><a name="kanchor112"></a>Corner Rounding Overview</h1>
+        <table style="width: 650px;mc-table-style: url('Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;" class="TableStyle_Note" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> This feature causes the controller to activate lookahead. For more information, refer to <a href="ms-its:a3200.chm::/Program_Block_Look-Ahead_Overview.htm" MadCap:wasOriginalLinkAbs_href="true">Program Block Lookahead Overview.</a></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Corner rounding inserts an arc  between two consecutive non-tangent <a href="ms-its:a3200.chm::/Commands/LINEAR_Command.html" MadCap:wasOriginalLinkAbs_href="true">LINEAR</a> moves.</p>
+        <h4 class="figure" MadCap:autonum=""><span class="autonumber"><span></span></span>Figure: A Path With and Without Corner Rounding
+            </h4>
+        <p class="img">
+            <img src="Resources/Images/Figure_CornerRoundingWithWithout.png" />
+        </p>
+        <table class="TableStyle-Basic" style="mc-table-style: url('Resources/TableStyles/Basic.css');margin-left: 0;margin-right: auto;width: 625px;" cellspacing="0">
+            <col style="width: 93px;" class="TableStyle-Basic-Column-Column1" />
+            <col class="TableStyle-Basic-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Basic-Head-Header1">
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1" style="text-align: center;">Figure Label</th>
+                    <th class="TableStyle-Basic-HeadD-Column1-Header1" style="text-align: left;">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;font-weight: normal;font-style: italic;font-family: serif;font-size: 12pt;text-align: center;">
+                        <img src="Resources/Images/Figure_DashedLine.png" class="noLeadingCenter" />
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">
+                        <p>The dashed line shows a path without corner rounding. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyB-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;font-family: serif;font-weight: normal;font-style: normal;font-size: 12pt;text-align: center;">
+                        <img src="Resources/Images/Figure_SolidLine.png" class="noLeadingCenter" />
+                    </td>
+                    <td class="TableStyle-Basic-BodyA-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">
+                        <p>The solid line shows the same path with corner rounding. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The <a href="Commands/ROUNDING%20ON_OFF_Command.html">ROUNDING ON </a>command turns on corner rounding. The <a href="Commands/ROUNDING%20ON_OFF_Command.html">ROUNDING OFF</a> command turns off corner rounding. Use the <a href="Commands/ROUNDING%20AXES_Command.html">ROUNDING AXES</a> command to specify the two axes that are used for corner rounding. </p>
+        <table style="mc-table-style: url('Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;caption-side: top;" class="TableStyle_Note" cellspacing="0">
+            <col style="width: 650px;" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd"><span class="note">Note:</span> If you use the corner rounding and cutter compensation features at the same time, then you must use the same two axes for both features.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>A corner rounding move is <span class="bold">not</span> inserted if any of the following conditions are true.</p>
+        <ul>
+            <li value="1">Either move of the two consecutive non-tangent moves is not a LINEAR move.</li>
+            <li value="2">The angle between the LINEAR&#160;moves is 180°. </li>
+            <li value="3">The insertion is limited by the <a href="ms-its:a3200.chm::/Parameters/MaxLookaheadMoves.html" MadCap:wasOriginalLinkAbs_href="true">MaxLookaheadMoves</a> parameter. </li>
+            <li value="4">One or more of the following commands are issued between the two moves: G53, G54, G55, G56, G57, G58, G59, POSOFFSET, G82, G92, FARCALL, and FARGOTO. </li>
+        </ul>
+        <p>Corner rounding  occurs only in moves that are  between the ROUNDING ON command and the ROUNDING OFF command.</p>
+        <div class="example">
+            <p class="For_example_Head"> For Example</p>
+            <p>Corner rounding occurs in the code sample that follows.</p>
+            <ul>
+                <li value="1"> An arc is <span class="bold">not</span> inserted between the <span class="pre">LINEAR Y -10</span> and <span class="pre">LINEAR X 10 Y 10</span> moves. </li>
+                <li value="2">An arc is inserted between the <span class="pre">LINEAR X 10 Y 10</span> and <span class="pre">LINEAR X -10 Y 10</span> moves.</li>
+                <li value="3"> An arc is <span class="bold">not</span> inserted between the <span class="pre">LINEAR X -10 Y 10</span> and <span class="pre">LINEAR Y -10</span> moves. </li>
+            </ul>
+            <h4 class="exampleHeading" MadCap:autonum=""><span class="autonumber"><span></span></span>Example</h4>
+            <div class="codeexample"><pre xml:space="preserve">
+ROUNDING AXES X Y
+ROUNDING TOLERANCE 1
+LINEAR Y -10
+ROUNDING ON
+LINEAR X 10 Y 10
+LINEAR X -10 Y 10
+ROUNDING OFF
+LINEAR Y -10</pre>
+            </div>
+        </div>
+        <table style="mc-table-style: url('Resources/TableStyles/Note.css');margin-left: 0;margin-right: auto;width: 650px;" class="TableStyle_Note" cellspacing="0">
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Note_Body_0_0_RowEnd_ColEnd">
+                        <p><span class="note">Note:</span> In VELOCITY&#160;ON&#160;mode, acceleration can occur when the axis travels around arcs that are inserted by corner rounding. The acceleration can be high if the radius of the arc is very short. High accelerations can cause position errors, servo loop oscillation, and other motion problems. Use the <a href="ms-its:a3200.chm::/Parameters/CoordinatedCircularAccelLimit.html" MadCap:wasOriginalLinkAbs_href="true">CoordinatedCircularAccelLimit</a> parameter to limit this acceleration.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Corner rounding uses position tolerance to find the radius of the inserted arc. The value that you specify for the <a href="ms-its:cncoption.chm::/Commands/ROUNDING TOLERANCE_Command.html" MadCap:wasOriginalLinkAbs_href="true">ROUNDING TOLERANCE</a> command is used as the position tolerance.</p>
+        <p>
+            <div class="MCDropDown_noBulletLevel1_0"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_3605062686_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/DropDownClosed.gif" MadCap:altsrc="SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: Corner Rounding by Position Tolerance
+                </a>
+                <div class="MCDropDownBody_0" id="MCDropDownBody_3605062686_0" style="display: none;">
+                    <p class="img">
+                        <img src="Resources/Images/Figure_CornerRoundingByPositionTolerance.png" />
+                    </p>
+                    <p>&#160;</p>
+                    <table class="TableStyle-Basic" style="mc-table-style: url('Resources/TableStyles/Basic.css');margin-left: 0;margin-right: auto;width: 650px;" cellspacing="0">
+                        <col style="width: 115px;" class="TableStyle-Basic-Column-Column1" />
+                        <col class="TableStyle-Basic-Column-Column1" />
+                        <thead>
+                            <tr class="TableStyle-Basic-Head-Header1">
+                                <th class="TableStyle-Basic-HeadE-Column1-Header1" style="text-align: center;">
+                                    <p>Figure Label</p>
+                                </th>
+                                <th class="TableStyle-Basic-HeadD-Column1-Header1" style="text-align: left;">
+                                    <p>Description</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-Basic-Body-Body1">
+                                <td class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;font-weight: normal;font-style: italic;font-family: serif;font-size: 12pt;text-align: center;">
+                                    <p>r</p>
+                                </td>
+                                <td class="TableStyle-Basic-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">
+                                    <p>the radius of the arc</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Basic-Body-Body1">
+                                <td class="TableStyle-Basic-BodyB-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;font-family: serif;font-weight: normal;font-style: normal;font-size: 12pt;text-align: center;">
+                                    <p>E</p>
+                                </td>
+                                <td class="TableStyle-Basic-BodyA-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">
+                                    <p>the position tolerance that is specified by the ROUNDING TOLERANCE command</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>&#160;</p>
+                </div>
+            </div>
+        </p>
+        <p>Corner rounding uses the following equation to find the radius of the inserted arc from the specified position tolerance.</p>
+        <p class="equation_18pt">
+            <img src="GeneratedImages/Equations/Equation6.png" style="width: 237px;height: 52px;" alt="" class="_MCEquation_0 mcReset" />
+        </p>
+        <table style="width: 100%;mc-table-style: url('Resources/TableStyles/When_Statement.css');" class="TableStyle-When_Statement" cellspacing="0">
+            <col class="Column-Column1" />
+            <col />
+            <tbody>
+                <tr class="Body-Body2">
+                    <td class="BodyE-Column1-Body2">
+                        <p>where</p>
+                    </td>
+                    <td class="BodyD--Body2">
+                        <p><span class="equation">&#945;</span> is the angle between the moves for which an arc is being inserted.</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body2">
+                    <td class="BodyB-Column1-Body2">
+                        <p>and</p>
+                    </td>
+                    <td class="BodyA--Body2">
+                        <p><span class="equation">E</span> is the position tolerance value that is provided.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>If either move of the two axes is too short to adjust for  the corner rounding arc, then the radius of the inserted arc decreases in order to fit the shorter move. The radius is inserted such that the arc intersects the short move at one half or less of the programmed move length. Refer to the following figure.</p>
+        <div class="MCDropDown"><a class="MCDropDownHotSpot_figure_0" href="javascript:void(0);" id="MCDropDownHotSpot_3605062686_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/DropDownClosed.gif" MadCap:altsrc="SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Figure: Radius Shortening Due to Short Moves
+            </a>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_3605062686_1" style="display: none;">
+                <p class="img">
+                    <img src="Resources/Images/Figure_CornerRoundingRadiusShortening.png" />
+                </p>
+                <table class="TableStyle-Basic" style="mc-table-style: url('Resources/TableStyles/Basic.css');margin-left: 0;margin-right: auto;width: 625px;" cellspacing="0">
+                    <col style="width: 85px;" class="TableStyle-Basic-Column-Column1" />
+                    <col class="TableStyle-Basic-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Basic-Head-Header1">
+                            <th class="TableStyle-Basic-HeadE-Column1-Header1">Figure Label</th>
+                            <th class="TableStyle-Basic-HeadD-Column1-Header1" style="text-align: left;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Basic-Body-Body1">
+                            <td class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;text-align: center;">
+                                <img src="Resources/Images/Common/CalloutLabel_Red_A.png" />
+                            </td>
+                            <td class="TableStyle-Basic-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">The arc specified by the position tolerance. </td>
+                        </tr>
+                        <tr class="TableStyle-Basic-Body-Body1">
+                            <td class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;text-align: center;">
+                                <img src="Resources/Images/Common/CalloutLabel_Red_B.png" />
+                            </td>
+                            <td class="TableStyle-Basic-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">The arc that is actually inserted. </td>
+                        </tr>
+                        <tr class="TableStyle-Basic-Body-Body1">
+                            <td class="TableStyle-Basic-BodyB-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;text-align: center;">
+                                <img src="Resources/Images/Common/CalloutLabel_Red_C.png" />
+                            </td>
+                            <td class="TableStyle-Basic-BodyA-Column1-Body1" style="vertical-align: middle;padding-left: 5px;padding-right: 5px;padding-top: 0px;padding-bottom: 0px;">Half the distance of the move. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="refExProg" MadCap:autonum=""><span class="autonumber"><span></span></span>Reference Example Programs</h3>
+        <p class="refExProg"><a href="Samples/Corner_Rounding.htm" class="MCXref_0">Corner Rounding Example</a>
+        </p>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Parameters/CoordinatedAccelLimit.html" MadCap:wasOriginalLinkAbs_href="true">CoordinatedAccelLimit Parameter</a>
+        </p>
+        <p class="relatedTopic"><a href="Cutter_Radius_Compensation_Overview.htm">Cutter Radius Compensation&#160;Overview</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Optimizing_Performance_in_VELOCITY_ON_Mode.htm" MadCap:wasOriginalLinkAbs_href="true">Optimizing Performance in VELOCITY ON&#160;Mode</a>
+        </p>
+        <p class="relatedTopic"><a href="Commands/ROUNDING%20AXES_Command.html">ROUNDING&#160;AXES Command</a>
+        </p>
+        <p class="relatedTopic"><a href="Commands/ROUNDING%20ON_OFF_Command.html">ROUNDING&#160;ON/OFF Command</a>
+        </p>
+        <p class="relatedTopic"><a href="Commands/ROUNDING%20TOLERANCE_Command.html">ROUNDING&#160;TOLERANCE Command</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=Corner_Rounding.htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=Corner_Rounding.htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

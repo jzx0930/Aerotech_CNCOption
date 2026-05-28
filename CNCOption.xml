@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpSystem DefaultUrl="CNC_Option_Overview.htm" Alias="Content/Data/Alias.xml" Skin="Data/SkinA3200NoVersion/Skin.xml" Multilingual="false" Skins="A3200NoVersion" BuildTime="9/21/2020 6:08:44 PM" BuildVersion="12.0.5991.25330" TargetType="HtmlHelp" SkinTemplateFolder="Skin/" InPreviewMode="false" MoveOutputContentToRoot="false" ReplaceReservedCharacters="false" MakeFileLowerCase="false" UseCustomTopicFileExtension="false" PreventExternalUrls="false" EnableResponsiveOutput="false" IncludeGlossarySearchResults="true" ResultsPerPage="20" xml:lang="en-us" LanguageName="English">
+    <Subsystems />
+</HelpSystem>

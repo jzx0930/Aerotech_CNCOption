@@ -1,0 +1,1177 @@
+<html>
+<head>
+</head>
+<body>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+	<param name="SiteType" value="toc">
+	<param name="Window Styles" value="0x27">
+	<param name="ExWindow Styles" value="0x0">
+	</object>
+<ul>
+	<li><object type="text/sitemap">
+		<param name="Name" value="CNC Option">
+		<param name="Local" value="CNC_Option_Overview.htm">
+			</object>
+	<ul>
+		<li><object type="text/sitemap">
+			<param name="Name" value="CNC Option Overview">
+			<param name="Local" value="CNC_Option_Overview.htm">
+			<param name="ImageNumber" value="11">
+					</object>
+		<li><object type="text/sitemap">
+			<param name="Name" value="CNC Parameters">
+			<param name="Local" value="Parameters/cnc_Category.html">
+					</object>
+		<ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="CNC Parameters">
+				<param name="Local" value="Parameters/cnc_Category.html">
+				<param name="ImageNumber" value="11">
+							</object>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Spindles">
+				<param name="Local" value="Parameters/spindles_Category.html">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindles">
+					<param name="Local" value="Parameters/spindles_Category.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle0MSOInput">
+					<param name="Local" value="Parameters/Spindle0MSOInput.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle1MSOInput">
+					<param name="Local" value="Parameters/Spindle1MSOInput.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle2MSOInput">
+					<param name="Local" value="Parameters/Spindle2MSOInput.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle3MSOInput">
+					<param name="Local" value="Parameters/Spindle3MSOInput.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle0Axis">
+					<param name="Local" value="Parameters/Spindle0Axis.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle1Axis">
+					<param name="Local" value="Parameters/Spindle1Axis.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle2Axis">
+					<param name="Local" value="Parameters/Spindle2Axis.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle3Axis">
+					<param name="Local" value="Parameters/Spindle3Axis.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="DefaultSpindle0Speed">
+					<param name="Local" value="Parameters/DefaultSpindle0Speed.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="DefaultSpindle1Speed">
+					<param name="Local" value="Parameters/DefaultSpindle1Speed.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="DefaultSpindle2Speed">
+					<param name="Local" value="Parameters/DefaultSpindle2Speed.html">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="DefaultSpindle3Speed">
+					<param name="Local" value="Parameters/DefaultSpindle3Speed.html">
+					<param name="ImageNumber" value="11">
+									</object>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="CutterTolerance">
+				<param name="Local" value="Parameters/CutterTolerance.html">
+				<param name="ImageNumber" value="11">
+							</object>
+					</ul>
+		<li><object type="text/sitemap">
+			<param name="Name" value="Spindles">
+			<param name="Local" value="Spindle_Overview.htm">
+					</object>
+		<ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Spindle Overview">
+				<param name="Local" value="Spindle_Overview.htm">
+				<param name="ImageNumber" value="11">
+							</object>
+			<li><object type="text/sitemap">
+				<param name="Name" value="S Command">
+				<param name="Local" value="CommandsOLD/S_Command.htm">
+				<param name="ImageNumber" value="11">
+							</object>
+					</ul>
+		<li><object type="text/sitemap">
+			<param name="Name" value="G-Code and M-Code Programming">
+			<param name="Local" value="G_M_Code_Programming_Overview.htm">
+					</object>
+		<ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="G-Code and M-Code Programming Overview">
+				<param name="Local" value="G_M_Code_Programming_Overview.htm">
+				<param name="ImageNumber" value="11">
+							</object>
+			<li><object type="text/sitemap">
+				<param name="Name" value="G-Code and M-Code Execution">
+				<param name="Local" value="G_Code_and_M_Code_Execution.htm">
+				<param name="ImageNumber" value="11">
+							</object>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Acceleration and Deceleration Ramping">
+				<param name="Local" value="CommandsOLD/RAMP_MODE_SINE_(G63).htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Sinusoidal and Linear Mode Ramping Commands">
+					<param name="Local" value="CommandsOLD/RAMP_MODE_SINE_(G63).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G63 Command (Set Sinusoidal Accleration)">
+						<param name="Local" value="CommandsOLD/RAMP_MODE_SINE_(G63).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G64 Command (Set Linear Acceleration Mode)">
+						<param name="Local" value="CommandsOLD/RAMP_MODE_LINEAR_(G64)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Rate-Based Ramping Commands">
+					<param name="Local" value="CommandsOLD/RAMP_MODE_RATE_(G68)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G68 Command (Set Rate-Based Acceleration)">
+						<param name="Local" value="CommandsOLD/RAMP_MODE_RATE_(G68)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G65 Command (Set Dominant Acceleration Rate)">
+						<param name="Local" value="CommandsOLD/G65_Command_(Set_Dominant_Acceleration_Rate).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G66 Command (Set Dominant Deceleration Rate)">
+						<param name="Local" value="CommandsOLD/G66_Command_(Set_Dominant_Deceleration_Rate).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G165 Command (Set Dependent Acceleration Rate)">
+						<param name="Local" value="CommandsOLD/G165_Command_(Set_Dependent_Acceleration_Rate).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G166 Command (Set Dependent Deceleration Rate)">
+						<param name="Local" value="CommandsOLD/G166_Command_(Set_Dependent_Deceleration_Rate).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Time-Based Ramping Commands">
+					<param name="Local" value="CommandsOLD/RAMP_MODE_TIME_(G67)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G67 Command (Set Time-Based Acceleration)">
+						<param name="Local" value="CommandsOLD/RAMP_MODE_TIME_(G67)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G60 Command (Set Acceleration Time)">
+						<param name="Local" value="CommandsOLD/G60_Command_(Set_Acceleration_Time).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G61 Command (Set Deceleration Time)">
+						<param name="Local" value="CommandsOLD/G61_Command_(Set_Deceleration_Time).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Controlling Axis Speeds">
+				<param name="Local" value="CommandsOLD/G93_Command_(Specify_Feedrate_Mode).htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G93 Command (Specify Feedrate Units Mode)">
+					<param name="Local" value="CommandsOLD/G93_Command_(Specify_Feedrate_Mode).htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G94 Command (Specify Feedrate Units Mode)">
+					<param name="Local" value="CommandsOLD/G94_Command_(Specify_Feedrate_Mode).htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G98 Command (Set Inverse Dominance Mode)">
+					<param name="Local" value="CommandsOLD/G98_Command_(Set_Inverse_Dominance_Mode).htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G99 Command (Clear Inverse Dominance Mode)">
+					<param name="Local" value="CommandsOLD/G99_Command_(Clear_Inverse_Dominance_Mode).htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Spindle Modes">
+					<param name="Local" value="CommandsOLD/G95_Command_(Specify_Spindle_Feedrate_Units_Mode).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G95 Command (Specify Spindle Feedrate Units Mode)">
+						<param name="Local" value="CommandsOLD/G95_Command_(Specify_Spindle_Feedrate_Units_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G96 Command (Specify Spindle Feedrate Units Mode)">
+						<param name="Local" value="CommandsOLD/G96_Command_(Specify_Spindle_Feedrate_Units_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G97 Command (Specify Spindle Feedrate Units Mode)">
+						<param name="Local" value="CommandsOLD/G97_Command_(Specify_Spindle_Feedrate_Units_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Manual Feedrate Override (MFO)">
+					<param name="Local" value="CommandsOLD/M48_Command_(Manual_Feedrate_Override_Lock).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M48 Command (Disable MFO)">
+						<param name="Local" value="CommandsOLD/M48_Command_(Manual_Feedrate_Override_Lock).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M49 Command (Enable MFO)">
+						<param name="Local" value="CommandsOLD/M49_Command_(Manual_Feedrate_Override_Unlock).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Programming Units and Modes">
+				<param name="Local" value="CommandsOLD/ENGLISH_(G70)_Command.htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Distance Units">
+					<param name="Local" value="CommandsOLD/ENGLISH_(G70)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G70 Command (Set English Units)">
+						<param name="Local" value="CommandsOLD/ENGLISH_(G70)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G71 Command (Set Metric Units)">
+						<param name="Local" value="CommandsOLD/METRIC_(G71)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Speed Units">
+					<param name="Local" value="CommandsOLD/MINUTES_(G75)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G75 Command (Set Minutes)">
+						<param name="Local" value="CommandsOLD/MINUTES_(G75)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G76 Command (Set Seconds)">
+						<param name="Local" value="CommandsOLD/SECONDS_(G76)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Absolute and Incremental Units">
+					<param name="Local" value="CommandsOLD/ABSOLUTE_(G90)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G90 Command (Enable Absolute Programming Mode)">
+						<param name="Local" value="CommandsOLD/ABSOLUTE_(G90)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G91 Command (Enable Incremental Programming Mode)">
+						<param name="Local" value="CommandsOLD/INCREMENTAL_(G91)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G118 Command (Circular Center Points in Absolute Coordinates)">
+						<param name="Local" value="CommandsOLD/G118_Command_(Circular_Center_Points_in_Absolute_Coordinates).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Motion">
+				<param name="Local" value="CommandsOLD/RAPID_(G0)_Command.htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G0 Command (Point-to-Point Motion)">
+					<param name="Local" value="CommandsOLD/RAPID_(G0)_Command.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G1 Command (Linear Motion)">
+					<param name="Local" value="CommandsOLD/LINEAR_(G1)_Command.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Circular Motion">
+					<param name="Local" value="CommandsOLD/CW_(G2)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G2 Command (Clockwise Motion)">
+						<param name="Local" value="CommandsOLD/CW_(G2)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G3 Command (Counterclockwise Motion)">
+						<param name="Local" value="CommandsOLD/CCW_(G3)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G12 Command (CW Circular Interpolation)">
+						<param name="Local" value="CommandsOLD/G12_Command_(CW_Circular_Interpolation).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G13 Command (CCW Circular Interpolation)">
+						<param name="Local" value="CommandsOLD/G13_Command_(CCW_Circular_Interpolation).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G16 Command (Coordinate System 1 Axis Assignment)">
+						<param name="Local" value="CommandsOLD/G16_Command_(Coordinate_System__1_Axis_Assignment).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G17, G18, and G19 (Plane Selection for Coordinate System 1 Commands)">
+						<param name="Local" value="CommandsOLD/G17_G18_G19_Commands_(Plane_Selection_Codes_Set_1).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G26 Command (Coordinate System 2 Axis Assignment)">
+						<param name="Local" value="CommandsOLD/G26_Command_(Coordinate_System__2_Axis_Assignment).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G27, G28, and G29 (Plane Selection for Coordinate System 2 Commands)">
+						<param name="Local" value="CommandsOLD/G27_G28_G29_Commands_(Plane_Selection_Codes_for_Coordinate_System__2)_.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Modifiers">
+						<param name="Local" value="CommandsOLD/G110_Command_(Normal_Circular_Interpolation).htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G110 Command (Normal Circular Interpolation)">
+							<param name="Local" value="CommandsOLD/G110_Command_(Normal_Circular_Interpolation).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G111 Command (Inverse Circular Interpolation)">
+							<param name="Local" value="CommandsOLD/G111_Command_(Inverse_Circular_Interpolation).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G118 Command (Circular Center Points in Absolute Coordinates)">
+							<param name="Local" value="CommandsOLD/G118_Command_(Circular_Center_Points_in_Absolute_Coordinates).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Velocity Profiling">
+					<param name="Local" value="CommandsOLD/VELOCITY_ON_(G108)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G108 Command (Enable Velocity Profiling and Lookahead)">
+						<param name="Local" value="CommandsOLD/VELOCITY_ON_(G108)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G109 Command (Disable Velocity Profiling and Lookahead)">
+						<param name="Local" value="CommandsOLD/VELOCITY_OFF_(G109)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G8 Command (Instantaneous Acceleration)">
+						<param name="Local" value="CommandsOLD/G8_Command_(Instantaneous_Acceleration).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G9 Command (Forced Deceleration)">
+						<param name="Local" value="CommandsOLD/G9_Command_(Forced_Deceleration).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Software Home">
+					<param name="Local" value="CommandsOLD/G82_Command_(Restore_Preset_Position_Registers).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G82 Command (Clear a Program Offset)">
+						<param name="Local" value="CommandsOLD/G82_Command_(Restore_Preset_Position_Registers).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G92 Command (Set an Arbitrary Program Offset)">
+						<param name="Local" value="CommandsOLD/G92_Command_(Set_Preset_Positions).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Galvo G82 Command">
+						<param name="Local" value="CommandsOLD/Galvo_G82.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Galvo G92 Command">
+						<param name="Local" value="CommandsOLD/Galvo_G92.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Motion Completion">
+					<param name="Local" value="CommandsOLD/WAIT_MODE_NOWAIT_(G359)_Command.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G359 Command (Set Wait Mode to No Wait)">
+						<param name="Local" value="CommandsOLD/WAIT_MODE_NOWAIT_(G359)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G360 Command (Set Wait Mode to Continue When Velocity Command is Zero)">
+						<param name="Local" value="CommandsOLD/G360_Command_(Continue_when_Velocity_Command_is_Zero).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G361 Command (Set Wait Mode to Wait Until Drive is In Position)">
+						<param name="Local" value="CommandsOLD/WAIT_MODE_INPOS_(G361)_Command.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Advanced Motion">
+					<param name="Local" value="CommandsOLD/G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Asynchronous Motion">
+						<param name="Local" value="CommandsOLD/G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G120 Command (Disable MFO and Feedhold During Jogging Motion)">
+							<param name="Local" value="CommandsOLD/G120_Command_(Disable_MFO_and_Feedhold_During_Jogging_Motion).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G121 Command (Enable MFO and Feedhold During Jogging Motion)">
+							<param name="Local" value="CommandsOLD/G121_Command_(Enable_MFO_and_Feedhold_During_Jogging_Motion).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Corner Rounding and Normalcy">
+						<param name="Local" value="Corner_Rounding.htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Corner Rounding Overview">
+							<param name="Local" value="Corner_Rounding.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Normalcy Motion Overview">
+							<param name="Local" value="Normalcy_Motion_Overview.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="CNC Category">
+							<param name="Local" value="Commands/cnc_Category.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="NORMALCY AXES">
+							<param name="Local" value="Commands/NORMALCY%20AXES_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="NORMALCY LEFT">
+							<param name="Local" value="Commands/NORMALCY%20LEFT_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="NORMALCY OFF">
+							<param name="Local" value="Commands/NORMALCY%20OFF_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="NORMALCY RIGHT">
+							<param name="Local" value="Commands/NORMALCY%20RIGHT_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="NORMALCY TOLERANCE">
+							<param name="Local" value="Commands/NORMALCY%20TOLERANCE_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROUNDING AXES">
+							<param name="Local" value="Commands/ROUNDING%20AXES_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROUNDING ON/OFF">
+							<param name="Local" value="Commands/ROUNDING%20ON_OFF_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROUNDING TOLERANCE">
+							<param name="Local" value="Commands/ROUNDING%20TOLERANCE_Command.html">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Deceleration Caused by Normalcy Mode">
+							<param name="Local" value="Deceleration_Caused_by_Normalcy_Mode.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Normalcy Concurrent Moves">
+							<param name="Local" value="Normalcy_Concurrent_Moves.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Normalcy Alignment Moves">
+							<param name="Local" value="Normalcy_Alignment_Moves.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Cutter Compensation">
+						<param name="Local" value="Cutter_Radius_Compensation_Overview.htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Radius Compensation">
+							<param name="Local" value="Cutter_Radius_Compensation_Overview.htm">
+													</object>
+						<ul>
+							<li><object type="text/sitemap">
+								<param name="Name" value="Cutter Radius Compensation Overview">
+								<param name="Local" value="Cutter_Radius_Compensation_Overview.htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G40 Command (Deactivate Cutter Radius Compensation)">
+								<param name="Local" value="CommandsOLD/G40_Command_(Deactivate_Cutter_Radius_Compensation)_.htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G41 Command (Activate Cutter Radius Compensation Left)">
+								<param name="Local" value="CommandsOLD/G41_Command_(Activate_ICRC_Left).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G42 Command (Activate Cutter Radius Compensation Right)">
+								<param name="Local" value="CommandsOLD/G42_Command_(Activate_ICRC_Right).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G43 Command (Set Cutter Radius Compensation)">
+								<param name="Local" value="CommandsOLD/G43_Command_(Set_Cutter_Radius_Compensation).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G44 Command (Set Cutter Compensation Axes)">
+								<param name="Local" value="CommandsOLD/G44_Command_(Set_Cutter_Compensation_Axes).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="Cutter Radius Compensation within Outside Corners">
+								<param name="Local" value="Cutter_Radius_Compensation_within_Outside_Corners.htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="Cutter Radius Compensation Limitations within Inside Corners">
+								<param name="Local" value="Cutter_Radius_Compensation_Limitations_within_Inside_Corners.htm">
+								<param name="ImageNumber" value="11">
+															</object>
+													</ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Offset Compensation">
+							<param name="Local" value="Cutter_Offset_Compensation_Overview.htm">
+													</object>
+						<ul>
+							<li><object type="text/sitemap">
+								<param name="Name" value="Cutter Offset Compensation Overview">
+								<param name="Local" value="Cutter_Offset_Compensation_Overview.htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G143 Command (Activate Positive Cutter Offset Compensation)">
+								<param name="Local" value="CommandsOLD/G143_Command_(Activate_Positive_Cutter).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G144 Command (Activate Negative Cutter Offset Compensation)">
+								<param name="Local" value="CommandsOLD/G144_Command_(Activate_Negative_Cutter).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+							<li><object type="text/sitemap">
+								<param name="Name" value="G149 Command (Deactivate Cutter Offset Compensation)">
+								<param name="Local" value="CommandsOLD/G149_Command_(Deactivate_Cutter_(Tool)_Offsets).htm">
+								<param name="ImageNumber" value="11">
+															</object>
+													</ul>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Fixture Offsets">
+						<param name="Local" value="Fixture_Offsets_Overview.htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Fixture Offsets">
+							<param name="Local" value="Fixture_Offsets_Overview.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G53 Command (Cancel Fixture Offset)">
+							<param name="Local" value="CommandsOLD/G53_Command_(Cancel_Fixture_Offset).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G54 Command (Set Fixture Offset #1)">
+							<param name="Local" value="CommandsOLD/G54_Command_(Set_Fixture_Offset_1).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G55 Command (Set Fixture Offset #2)">
+							<param name="Local" value="CommandsOLD/G55_Command_(Set_Fixture_Offset_2).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G56 Command (Set Fixture Offset #3)">
+							<param name="Local" value="CommandsOLD/G56_Command_(Set_Fixture_Offset_3).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G57 Command (Set Fixture Offset #4)">
+							<param name="Local" value="CommandsOLD/G57_Command_(Set_Fixture_Offset_4).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G58 Command (Set Fixture Offset #5)">
+							<param name="Local" value="CommandsOLD/G58_Command_(Set_Fixture_Offset_5).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G59 Command (Set Fixture Offset #6)">
+							<param name="Local" value="CommandsOLD/G59_Command_(Set_Fixture_Offset_6).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G153 Command (Suspend All Fixture Offsets)">
+							<param name="Local" value="CommandsOLD/G153_Command_(Suspend_All_Fixture_Offsets).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Rotation Transformation Overview">
+						<param name="Local" value="CommandsOLD/ROTATION_Transformation_Overview.htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Rotation Transformation Overview">
+							<param name="Local" value="CommandsOLD/ROTATION_Transformation_Overview.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROTATION Angle Command">
+							<param name="Local" value="CommandsOLD/ROTATION_Angle_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROTATION Displacement Command">
+							<param name="Local" value="CommandsOLD/ROTATION_Displacement_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROTATION InputAxes/OutputAxes Command">
+							<param name="Local" value="CommandsOLD/ROTATION_InputAxes_OutputAxes_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROTATION Normalcy Command">
+							<param name="Local" value="CommandsOLD/ROTATION_Normalcy_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="ROTATION On/Off Command">
+							<param name="Local" value="CommandsOLD/ROTATION_On_Off_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Scaling">
+						<param name="Local" value="CommandsOLD/G151_Command_(Set_Scale_Factor).htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G150 Command (Clear Scale Factor)">
+							<param name="Local" value="CommandsOLD/G150_Command_(Clear_Scale_Factor).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G151 Command (Set Scale Factor)">
+							<param name="Local" value="CommandsOLD/G151_Command_(Set_Scale_Factor).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Scaling Limitations">
+							<param name="Local" value="Scaling_Limitations.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Spindle Motion">
+						<param name="Local" value="CommandsOLD/MSO_Command.htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="MSO Command">
+							<param name="Local" value="CommandsOLD/MSO_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Mx3 Commands (Spindle On Clockwise)">
+							<param name="Local" value="CommandsOLD/Mx3_Commands_(Spindle_On_Clockwise)_.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Mx4 Commands (Spindle On Counterclockwise)">
+							<param name="Local" value="CommandsOLD/Mx4_Commands_(Spindle_On_Counterclockwise).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Mx5 Commands (Spindle Off)">
+							<param name="Local" value="CommandsOLD/Mx5_Commands_(Spindle_Off).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Mx19 Commands (Spindle Off/Reorient)">
+							<param name="Local" value="CommandsOLD/Mx19_Commands_(Spindle_Off_Reorient).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="M50 Command">
+							<param name="Local" value="CommandsOLD/M50_Command_(Spindle_Feedrate_Override_Lock).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="M51 Command">
+							<param name="Local" value="CommandsOLD/M51_Command_(Spindle_Feedrate_Override_Unlock).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G100 Command (Disable Spindle Shutdown Mode)">
+							<param name="Local" value="CommandsOLD/G100_Command_(Disable_Spindle_Shutdown_Mode).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G101 Command (Enable Spindle Shutdown Mode)">
+							<param name="Local" value="CommandsOLD/G101_Command_(Enable_Spindle_Shutdown_Mode).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="M1x3 Commands (Spindle On Clockwise Asynchronously)">
+							<param name="Local" value="CommandsOLD/M1x3_Commands_(Spindle_On_Clockwise_Asynchronously)_.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="M1x4 Commands (Spindle On Counterclockwise Asynchronously)">
+							<param name="Local" value="CommandsOLD/M1x4_Commands_(Spindle_On_Counterclockwise_Asynchronously).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Transformations">
+						<param name="Local" value="Transformation_Overview.htm">
+											</object>
+					<ul>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Transformations">
+							<param name="Local" value="Transformation_Overview.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G45 Command (Disable Polar or Cylindrical Coordinate Transformation)">
+							<param name="Local" value="CommandsOLD/G45_Command_(Disable_Polar_or_Cylindrical_Coordinate_Transformation).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G46 Command (Enable Polar Coordinate Transformation)">
+							<param name="Local" value="CommandsOLD/G46_Command_(Enable_Polar_Coordinate_Transformation).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G47 Command (Enable Cylindrical Coordinate Transformation)">
+							<param name="Local" value="CommandsOLD/G47_Command_(Enable_Cylindrical_Coordinate_Transformation).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G52 Command (Define Polar/Cylindrical Transformation Axes)">
+							<param name="Local" value="CommandsOLD/G52_Command_(Define_Polar_Cylindrical_Transformation_Axes).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G83 Command (Mirror Image)">
+							<param name="Local" value="CommandsOLD/G83_Command_(Mirror_Image).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="G84 Command (Parts Rotation)">
+							<param name="Local" value="CommandsOLD/G84_Command_(Parts_Rotation).htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="MIRROR ON Command">
+							<param name="Local" value="CommandsOLD/MIRROR_ON_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="MIRROR OFF Command">
+							<param name="Local" value="CommandsOLD/MIRROR_OFF_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="Order of Transformation Application">
+							<param name="Local" value="Order_of_Transformation_Application.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+						<li><object type="text/sitemap">
+							<param name="Name" value="TRANSFORM POSITION RESET Command">
+							<param name="Local" value="CommandsOLD/TRANSFORM_POSITION_RESET_Command.htm">
+							<param name="ImageNumber" value="11">
+													</object>
+											</ul>
+									</ul>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="M-Code I/O">
+				<param name="Local" value="Assigning_M_Codes.htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="M-Code I/O">
+					<param name="Local" value="Assigning_M_Codes.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Custom G-Code and M-Codes (Using Defines)">
+					<param name="Local" value="Custom_G-_and_M-Codes_(Using_Defines).htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Drive Binary I/O M-Code Map">
+					<param name="Local" value="Virtual_I_O_Map.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="N-Codes">
+				<param name="Local" value="N_Words.htm">
+				<param name="ImageNumber" value="11">
+							</object>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Program Flow Control">
+				<param name="Local" value="CommandsOLD/M97_Command_(Loop_Over_Near_Call_to_Subroutine).htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Subroutines">
+					<param name="Local" value="CommandsOLD/M97_Command_(Loop_Over_Near_Call_to_Subroutine).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M97 Command (Loop Over Near Call to Subroutine)">
+						<param name="Local" value="CommandsOLD/M97_Command_(Loop_Over_Near_Call_to_Subroutine).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M98 Command (Loop Over Far Call to Subroutine)">
+						<param name="Local" value="CommandsOLD/M98_Command_(Loop_Over_Far_Call_to_Subroutine).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Program Controls">
+					<param name="Local" value="CommandsOLD/M0_Command_(Program_Pause).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M0 Command (Program Pause)">
+						<param name="Local" value="CommandsOLD/M0_Command_(Program_Pause).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M1 Command (Optional Pause)">
+						<param name="Local" value="CommandsOLD/M1_Command_(Optional_Pause).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M2 Command (End Program)">
+						<param name="Local" value="CommandsOLD/M2_Command_(End_Of_Program).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M30 Command (Reset Program)">
+						<param name="Local" value="CommandsOLD/M30_Command_(Reset_Program).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="M47 Command (Restart Program)">
+						<param name="Local" value="CommandsOLD/M47_Command_(Restart_Program).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Block Delete">
+					<param name="Local" value="CommandsOLD/G112_Command_(Set_Block_Delete_Mode).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G112 Command (Enable Block Delete Mode)">
+						<param name="Local" value="CommandsOLD/G112_Command_(Set_Block_Delete_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G113 Command (Disable Block Delete Mode)">
+						<param name="Local" value="CommandsOLD/G113_Command_(Clear_Block_Delete_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G212 Command (Enable Block Delete 2 Mode)">
+						<param name="Local" value="CommandsOLD/G212_Command_(Set_Block_Delete2_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G213 Command (Disable Block Delete 2 Mode)">
+						<param name="Local" value="CommandsOLD/G213_Command_(Clear_Block_Delete2_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Optional Stop">
+					<param name="Local" value="CommandsOLD/G114_Command_(Set_Optional_Stop_Mode).htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G114 Command (Set Optional Pause Mode)">
+						<param name="Local" value="CommandsOLD/G114_Command_(Set_Optional_Stop_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="G115 Command (Clear Optional Pause Mode)">
+						<param name="Local" value="CommandsOLD/G115_Command_(Clear_Optional_Stop_Mode).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Retrace Overview">
+					<param name="Local" value="Retrace_Overview.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="RETRACE Command">
+					<param name="Local" value="CommandsOLD/RETRACE_Command.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G4 Command (Delay Program Execution)">
+					<param name="Local" value="CommandsOLD/DWELL_(G4)_Command.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Advanced Commands">
+				<param name="Local" value="Custom_Command_Introduction.htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Custom Commands">
+					<param name="Local" value="Custom_Command_Introduction.htm">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Custom Commands">
+						<param name="Local" value="Custom_Command_Introduction.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Custom G-Codes and M-Codes (Using Calls)">
+						<param name="Local" value="Custom_G-_and_M-Codes_(Using_Calls).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Custom G-Codes and M-Codes (Using Defines)">
+						<param name="Local" value="Custom_G-_and_M-Codes_(Using_Defines).htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="#makencodeslabels preprocessor directive">
+					<param name="Local" value="CommandsOLD/_MAKENCODELABELS.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="T Command">
+					<param name="Local" value="CommandsOLD/T_Word.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="TRACE END Command">
+					<param name="Local" value="CommandsOLD/Trace_Command.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="G51 (Enable Touch Probe Monitor)">
+					<param name="Local" value="CommandsOLD/G51_Command_(Monitor_Touch_Probe).htm">
+					<param name="ImageNumber" value="11">
+									</object>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Example Programs">
+				<param name="Local" value="Samples/Example_Programs.htm">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Example Programs">
+					<param name="Local" value="Samples/Example_Programs.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Basic CNC Programming">
+					<param name="Local" value="Samples/skill__0.html">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Basic CNC Programming">
+						<param name="Local" value="Samples/skill__0.html">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Simple G Code Motion">
+						<param name="Local" value="Samples/Simple_G_Code_Motion.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Corner Rounding">
+						<param name="Local" value="Samples/Corner_Rounding.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Normalcy Motion">
+						<param name="Local" value="Samples/Normalcy_Motion.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Parts Rotation">
+						<param name="Local" value="Samples/Parts_Rotation.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Scribing Characters">
+					<param name="Local" value="Samples/skill__1.html">
+									</object>
+				<ul>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Scribing Characters">
+						<param name="Local" value="Samples/skill__1.html">
+						<param name="ImageNumber" value="11">
+											</object>
+					<li><object type="text/sitemap">
+						<param name="Name" value="Character Scribing">
+						<param name="Local" value="Samples/Character_Scribing.htm">
+						<param name="ImageNumber" value="11">
+											</object>
+									</ul>
+							</ul>
+					</ul>
+		<li><object type="text/sitemap">
+			<param name="Name" value="Troubleshooting">
+			<param name="Local" value="Technical_Support.htm">
+					</object>
+		<ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Global Technical Support">
+				<param name="Local" value="Technical_Support.htm">
+				<param name="ImageNumber" value="11">
+							</object>
+			<li><object type="text/sitemap">
+				<param name="Name" value="CNC Option Error Messages">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Too many axes for retrace">
+					<param name="Local" value="Retrace_Overview.htm">
+					<param name="ImageNumber" value="11">
+									</object>
+							</ul>
+			<li><object type="text/sitemap">
+				<param name="Name" value="Symptoms">
+							</object>
+			<ul>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Unexpected Deceleration to zero velocity in-between moves, while in Normalcy Mode">
+					<param name="ImageNumber" value="11">
+									</object>
+				<li><object type="text/sitemap">
+					<param name="Name" value="Unexpected Jerking of the Normalcy axis, when in Normalcy Mode">
+					<param name="ImageNumber" value="11">
+									</object>
+							</ul>
+					</ul>
+			</ul>
+	</ul>
+</body>
+</html>

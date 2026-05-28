@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="CNC Option|Troubleshooting|CNC Option Error Messages" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="" MadCap:HelpSystemFileName="CNCOption.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>Retrace Overview</title>
+        <link href="SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/MasterPage_Footer.css" rel="stylesheet" />
+        <link href="Resources/Stylesheets/AerotechHelpStyles.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Header.css" rel="stylesheet" />
+        <link href="Resources/TableStyles/Basic.css" rel="stylesheet" />
+        <script src="SkinSupport/jquery.js">
+        </script>
+        <script src="SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            <!--
+			window.onbeforeprint = function(e) {
+				var nodes = document.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++ ) {			
+					if (nodes[i].nodeType == 1)
+					{
+						var args = nodes[i].attributes;
+						for (var j = 0; j < args.length; j++) {
+						if ( args[j].name == "MadCap:targetName" )
+						{
+							nodes[i].setAttribute( "className", "MCTogglerBody" );
+						}
+						}
+					}
+				}
+			}						
+			-->
+        </script>
+        <table style="width: 100%;margin-left: -7px;margin-right: auto;mc-table-style: url('Resources/TableStyles/Header.css');" cellspacing="0" MadCap:conditions="AerotechConditions.A3200Only" class="TableStyle-Header">
+            <col class="TableStyle-Header-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Header-Body-Body1" style="height: 55px;">
+                    <td style="background-repeat: no-repeat;vertical-align: top;background-image: url('Resources/Images/Header/Header_A3200.png');background-position-y: top;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;border-left-style: none;border-right-style: none;border-top-style: none;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #dae3ea;" class="TableStyle-Header-BodyA-Column1-Body1">
+                        <div class="MCBreadcrumbsBox_MD_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="CNC_Option_Overview.htm">CNC Option</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Technical_Support.htm">Troubleshooting</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">CNC Option Error Messages</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Retrace Overview</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:autonum=""><span class="autonumber"><span></span></span>Retrace Overview</h1>
+        <p><a name="kanchor215"></a>
+            <MadCap:conditionalText MadCap:conditions="AerotechConditions.Option_CNC">When you activate retrace, the controller executes motion and motion-synchronized commands in reverse order, through commands that previously executed. </MadCap:conditionalText> Coordinated motion commands (such as LINEAR, CW, and CCW) are executed in reverse, and motion retraces in reverse along the path that was made during forward execution of the program. Rapid motion commands are also executed in reverse, but because RAPID moves are not coordinated motion commands, the controller does not always retrace the same path as forward execution of the program. The controller also executes some synchronized non-motion commands during retrace.</p>
+        <p>The controller keeps a history of moves and synchronized commands that can be used for retrace. The number of moves and synchronized commands in the retrace history is determined by the value set for the <a href="ms-its:a3200.chm::\Parameters\MaxRetraceMoves.html" MadCap:wasOriginalLinkAbs_href="false">MaxRetraceMoves Parameter</a>.</p>
+        <p class="Table_Title_bold_Numbered" MadCap:autonum="Table: &#160;&#160;&#160;&#160;"><span class="autonumber"><span>Table: &#160;&#160;&#160;&#160;</span></span>Commands that are stored in the retrace history</p>
+        <table style="width: 650px;mc-table-style: url('Resources/TableStyles/Basic.css');margin-left: 0;margin-right: auto;" class="TableStyle-Basic" cellspacing="0">
+            <col style="width: 181px;" class="TableStyle-Basic-Column-Column1" />
+            <col class="TableStyle-Basic-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Basic-Head-Header1">
+                    <th class="TableStyle-Basic-HeadE-Column1-Header1">
+                        <p style="text-align: left;">Command</p>
+                    </th>
+                    <th class="TableStyle-Basic-HeadD-Column1-Header1">
+                        <p style="text-align: left;">Retrace Behavior</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>LINEAR</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Move is executed in reverse.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>CW</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Move is executed in reverse.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>CCW</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Move is executed in reverse.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>BEZIER</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Move is executed in reverse.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>RAPID</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Move is executed with reversed start and end points.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>$AO, $DO, $WO, $BO, $BI, $RO, $RI, $PORT</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 4px;padding-right: 4px;padding-top: 0px;padding-bottom: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>Reverts to the previous value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>RAMP MODE, RAMP&#160;RATE, RAMP&#160;RATE&#160;DEPENDENT, RAMP&#160;TIME, RAMP TYPE. SCURVE</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1" style="vertical-align: middle;padding-left: 4px;padding-right: 4px;padding-top: 0px;padding-bottom: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>Reverts to the previous ramp setting.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>XF, YF, ZF. . . </p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Reverts to the previous axis speed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>DWELL</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Executes as much of the DWELL as was executed during forward execution.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1" style="vertical-align: middle;padding-left: 4px;padding-right: 4px;padding-top: 0px;padding-bottom: 0px;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;">
+                        <p>MOVEDELAY</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Executes as much of the MOVEDELAY as was executed during forward execution.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <p>SYNCCALL</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <p>Skipped.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyB-Column1-Body1">
+                        <p>VELOCITY&#160;ON/OFF</p>
+                    </td>
+                    <td class="TableStyle-Basic-BodyA-Column1-Body1">
+                        <p>Reverts to previous setting.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Some <span class="AerotechVariablesSimpleName_AeroBasic">AeroBasic</span> commands such as <a href="ms-its:a3200.chm::/CommandsOLD/Asynchronous_Motion.htm" MadCap:wasOriginalLinkAbs_href="true">asynchronous 
+ motion</a>, string assignments, file operations, HOME, and other commands cannot 
+ be retraced through. If you execute one of these commands during normal program execution, the controller will clear the retrace history.  If the controller reaches the end of the retrace history during retrace, the task will error.  </p>
+        <p>To prevent a task from reaching the end of the retrace history and causing an error, use the TRACE END command. When retrace is active, the controller will not retrace past the TRACE END command. The controller will stay on the TRACE END command until retrace is disabled. The TRACE END command is ignored when retrace is not active.</p>
+        <p>The Retrace Mode status is indicated by the <span class="bold">Retrace</span> bit of the <a href="ms-its:a3200.chm::/StructsAutoGen/taskstatus0.html" MadCap:wasOriginalLinkAbs_href="true">TaskStatus0</a> status item.</p>
+        <p>You can activate or deactivate retrace with one of the methods that follow.</p>
+        <div class="MCDropDown">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1287806734_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/DropDownClosed.gif" MadCap:altsrc="SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Use the Retrace Mode Buttons of the <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span></a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_1287806734_0" style="display: none;">
+                <div>
+                    <p>You can activate or deactivate retrace in the Retrace Mode section of the CNC Operator Interface. The Retrace Mode section is available only when the task is running or paused. </p>
+                    <p>To activate Retrace mode, click <span class="procedureTerm">Change </span>and then click <span class="procedureTerm">On</span>.</p>
+                    <p>
+                        <img src="Resources/Images/Image_A_RetraceMode.png" />
+                    </p>
+                </div>
+                <p>If you activate Retrace mode while the program is executing a command, the controller immediately  decelerates motion. When the axes reach zero velocity, the controller enters Retrace mode, and the task is placed in feedhold. To continue executing the program in reverse, click <span class="procedureTerm">Cycle Start</span>.</p>
+                <p>If you activate Retrace mode while the program is paused, the controller stays paused until you click <span class="procedureTerm">Cycle Start</span>.</p>
+                <p valign="middle" colspan="2">To deactivate Retrace mode, click <span class="procedureTerm">Change</span> and then click <span class="procedureTerm">Off</span>. </p>
+                <p valign="middle" colspan="2">If you deactivate Retrace mode while the program is executing a command, the controller immediately decelerates motion. When the axes reach zero velocity, the controller exits Retrace mode, and the task is placed in feedhold. To continue executing the program in the forward direction, click <span class="procedureTerm">Cycle Start</span>.</p>
+            </div>
+        </div>
+        <div class="MCDropDown">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1287806734_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/DropDownClosed.gif" MadCap:altsrc="SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Use the RETRACE Command in a program</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_1287806734_1" style="display: none;">
+                <p>You can activate or deactivate retrace in a program with the <span class="AerotechVariablesSimpleName_AeroBasic">AeroBasic</span> RETRACE&#160;command. The RETRACE command  has the same behavior as when you use the Retrace mode buttons in the <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span>, as described in the previous section. If you activate retrace with the RETRACE command, you can continue program execution with one of the actions that follow.</p>
+                <ul>
+                    <li value="1">Click <span class="procedureTerm">Cycle Start</span> in the <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span>.</li>
+                    <li value="2">Issue a <a href="ms-its:a3200.chm::/Commands/programcontrol_Category.html" MadCap:wasOriginalLinkAbs_href="true">Program Start</a> in a program.</li>
+                    <li value="3">Issue a FEEDHOLD OFF&#160;in a program.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="MCDropDown">
+            <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_1287806734_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/DropDownClosed.gif" MadCap:altsrc="SkinSupport/DropDownOpen.gif" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/DropDownOpen.gif' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Set the MFO to a positive or negative value</a>
+            </div>
+            <div class="MCDropDownBody_0" id="MCDropDownBody_1287806734_2" style="display: none;">
+                <p>You can activate or deactivate retrace if you set MFO to a negative value. You can do this if you give the <a href="ms-its:a3200.chm::/Commands/MFO_Command.html" MadCap:wasOriginalLinkAbs_href="true">MFO</a> command a negative value or change MFO to a negative value from the <span class="AerotechVariablesSimpleName_CNCOI">CNC Operator Interface</span>. The MFO method of retrace is different from the Retrace mode buttons and the RETRACE command because activation and deactivation of retrace occurs immediately and the controller does not put the task in feedhold.</p>
+                <p>Before you set the MFO Command to a negative value, you must set the <a href="ms-its:a3200.chm::/Parameters/MinimumMFO.html" MadCap:wasOriginalLinkAbs_href="true">MinimumMFO</a> task parameter to a negative value that is equal to or less than what you want the MFO Command to be. For example, if you set the MFO Command to -100%, the MinimumMFO parameter must be -100% or less. </p>
+                <p>To activate retrace, make the <span class="commandArgument">&lt;Value&gt;</span> argument of the MFO Command a negative value (for example, -100%). The controller immediately begins to reverse execute the command and continues to execute the program in the reverse direction. </p>
+                <p>To deactivate retrace, make the <span class="commandArgument">&lt;Value&gt;</span> argument of the MFO Command a positive value (for example, 100%). The controller immediately begins to forward execute the command and continues to execute the program in the forward direction. </p>
+            </div>
+        </div>
+        <p>The controller automatically deactivates retrace when you issue a <a href="ms-its:a3200.chm::/Commands/programcontrol_Category.html" MadCap:wasOriginalLinkAbs_href="true">Program Stop</a>, when a task error occurs, or when an <a href="ms-its:a3200.chm::/Commands/ONGOSUB_Command.html" MadCap:wasOriginalLinkAbs_href="true">ONGOSUB</a> condition occurs.</p>
+        <p>Pause and Step Mode are disabled during retrace. To pause motion during retrace, issue the FEEDHOLD ON command and specify the task that is currently in retrace. To resume motion, issue a FEEDHOLD OFF command and specify the task that is currently in retrace.</p>
+        <p>After you exit retrace and start the program, the controller executes forward through the retrace history until it gets to the <span class="AerotechVariablesSimpleName_AeroBasic">AeroBasic</span> line where retrace was activated. While the controller is moving forward through the retrace history, it executes only commands that are moves or synchronized commands. It does not execute any other types of commands. When the controller gets to the line where retrace was activated, the <span class="AerotechVariablesSimpleName_AeroBasic">AeroBasic</span> program executes as usual.</p>
+        <h3 class="relatedTopics" MadCap:autonum=""><span class="autonumber"><span></span></span>Related Topics</h3>
+        <p class="relatedTopic"><a href="CommandsOLD/RETRACE_Command.htm" class="MCXref_0">RETRACE Command</a>
+        </p>
+        <p class="relatedTopic"><a href="CommandsOLD/Trace_Command.htm" class="MCXref_0">TRACE END Command</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/MFO_Overview_forProgramming.htm" MadCap:wasOriginalLinkAbs_href="true">MFO Overview</a>
+        </p>
+        <p class="relatedTopic"><a href="ms-its:a3200.chm::/Parameters/MaxRetraceMoves.html" MadCap:wasOriginalLinkAbs_href="true">MaxRetraceMoves Parameter</a>
+        </p>
+        <MadCap:pageFooter class="OddPage">
+            <hr color="#006400" width="100%" size="0" align="center" />
+            <table style="width: 100%;border-left-style: none;border-left-width: 1px;border-right-style: none;border-right-width: 1px;border-top-style: none;border-top-width: 1px;border-bottom-style: none;border-bottom-width: 1px;margin-left: 0;margin-right: auto;mc-table-style: url('Resources/TableStyles/MasterPage_Footer.css');" class="TableStyle-MasterPage_Footer" cellspacing="0">
+                <col class="Column-Column1" />
+                <col class="Column-Column2" />
+                <tbody>
+                    <tr class="Body-Body1">
+                        <td class="BodyB-Column1-Body1">
+                            <p class="feedback">Was this information helpful?</p><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=Retrace_Overview.htm&amp;version=6.04.003&amp;helpful=yes" target="_blank"><div class="feedback"><p>Yes</p></div></a><a href="http://help.aerotech.com/feedback/?product=A3200&amp;type=help&amp;id=Retrace_Overview.htm&amp;version=6.04.003&amp;helpful=no" target="_blank"><div class="feedback"><p>No</p></div></a>
+                        </td>
+                        <td class="BodyA-Column2-Body1" style="text-align: right;">
+                            <p class="footer"><span class="AerotechVariablesCompanyName">Aerotech, Inc.</span>
+                            </p>
+                            <p class="trademarkandCopyright" style="text-align: right;" MadCap:conditions="AerotechConditions.A3200Only,AerotechConditions.A3200Programming,AerotechConditions.Option_LabVIEWA3200">Copyright <img src="Resources/Images/Header/CopyrightSymbol.png" /> 2001-<span class="AerotechVariablesCurrentYear">2020</span></p>
+                            <p class="footer"> All Rights Reserved </p>
+                            <p class="footer"><a href="mailto:Support@aerotech.com" target="_blank" title="Support Email Address" alt="Support Email Address">Support@aerotech.com</a>
+                            </p>
+                            <p class="footer"><a href="http://www.aerotech.com/" target="_blank" title="http://www.aerotech.com" alt="http://www.aerotech.com"><span class="AerotechVariablesWebAddress">www.aerotech.com</span></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </MadCap:pageFooter>
+        <script type="text/javascript" src="SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>
